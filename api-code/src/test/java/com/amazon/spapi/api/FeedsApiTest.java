@@ -18,7 +18,7 @@ import com.amazon.spapi.model.feeds.CreateFeedDocumentResponse;
 import com.amazon.spapi.model.feeds.CreateFeedDocumentSpecification;
 import com.amazon.spapi.model.feeds.CreateFeedResponse;
 import com.amazon.spapi.model.feeds.CreateFeedSpecification;
-import com.amazon.spapi.model.feeds.ErrorList;
+import com.amazon.spapi.model.ErrorList;
 import com.amazon.spapi.model.feeds.Feed;
 import com.amazon.spapi.model.feeds.FeedDocument;
 import com.amazon.spapi.model.feeds.GetFeedsResponse;
