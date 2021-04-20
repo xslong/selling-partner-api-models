@@ -5,7 +5,7 @@ import com.amazonaws.auth.AWS4Signer;
 import com.amazonaws.auth.AWSCredentials;
 import com.amazonaws.auth.AWSCredentialsProvider;
 import com.amazonaws.auth.BasicAWSCredentials;
-import com.squareup.okhttp.Request;
+import okhttp3.Request;
 import lombok.AccessLevel;
 import lombok.Getter;
 import lombok.Setter;

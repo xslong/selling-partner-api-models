@@ -1,11 +1,11 @@
 package com.amazon.spapi.documents.impl;
 
 import com.amazon.spapi.documents.exception.HttpResponseException;
-import com.squareup.okhttp.Call;
-import com.squareup.okhttp.OkHttpClient;
-import com.squareup.okhttp.Request;
-import com.squareup.okhttp.Response;
-import com.squareup.okhttp.ResponseBody;
+import okhttp3.Call;
+import okhttp3.OkHttpClient;
+import okhttp3.Request;
+import okhttp3.Response;
+import okhttp3.ResponseBody;
 import okio.Buffer;
 import org.apache.commons.io.IOUtils;
 import org.junit.jupiter.api.Assertions;
@@ -71,7 +71,7 @@ class OkHttpTransferClientTest {
             tmpFile.delete();
         }
 
-        assertEquals(url, requestArg.getValue().urlString());
+        assertEquals(url, requestArg.getValue().url());
         assertEquals("GET", requestArg.getValue().method());
         Mockito.verify(responseBody).close();
     }
@@ -238,7 +238,7 @@ class OkHttpTransferClientTest {
             requestArg.getValue().body().writeTo(buffer);
             assertEquals(content, buffer.readString(StandardCharsets.UTF_8));
 
-            assertEquals(url, requestArg.getValue().urlString());
+            assertEquals(url, requestArg.getValue().url());
             assertEquals("PUT", requestArg.getValue().method());
             assertEquals(contentType, requestArg.getValue().body().contentType().toString());
         } finally {

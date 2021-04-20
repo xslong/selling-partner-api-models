@@ -1,10 +1,10 @@
 package com.amazon.SellingPartnerAPIAA;
 
 import com.amazonaws.http.HttpMethodName;
-import com.squareup.okhttp.HttpUrl;
-import com.squareup.okhttp.MediaType;
-import com.squareup.okhttp.Request;
-import com.squareup.okhttp.RequestBody;
+import okhttp3.HttpUrl;
+import okhttp3.MediaType;
+import okhttp3.Request;
+import okhttp3.RequestBody;
 import org.junit.Before;
 import org.junit.Test;
 
