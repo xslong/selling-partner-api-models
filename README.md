@@ -10,6 +10,17 @@ api-code为生成的代码，可以直接用maven命令打包。
     cd api-code
     mvn clean package
 
+
+
+如果不需要OkHttp3可使用官方默认的方式生成代码，直接下载 https://github.com/amzn/selling-partner-api-models ，
+创建文件 api-code/.swagger-codegen-ignore 写入下面内容，再把脚本 start-codegen.sh 复制过去执行
+
+    src/main/java/com/amazon/spapi/model/*/Error.java
+    src/main/java/com/amazon/spapi/model/*/ErrorList.java
+
+
+
+#### 以下忽略
 ####  api-code pom.xml 修改如下
     
     <java.version>1.8</java.version>
