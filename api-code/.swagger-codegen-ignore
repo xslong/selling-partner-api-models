@@ -25,3 +25,10 @@
 
 src/main/java/com/amazon/spapi/model/*/Error.java
 src/main/java/com/amazon/spapi/model/*/ErrorList.java
+
+src/main/java/com/amazon/spapi/ApiClient.java
+src/main/java/com/amazon/spapi/auth/HttpBasicAuth.java
+src/main/java/com/amazon/spapi/GzipRequestInterceptor.java
+src/main/java/com/amazon/spapi/ProgressRequestBody.java
+src/main/java/com/amazon/spapi/ProgressResponseBody.java
+src/test/**/*.java

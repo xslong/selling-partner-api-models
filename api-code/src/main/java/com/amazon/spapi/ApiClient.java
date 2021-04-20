@@ -214,9 +214,9 @@ public class ApiClient {
      * Configure client keys to use for authorization in an SSL session.
      * Use null to reset to default.
      *
-     * @param managers The KeyManagers to use
      * @return ApiClient
-
+*/
+    /*
     public ApiClient setKeyManagers(KeyManager[] managers) {
         this.keyManagers = managers;
         applySslSettings();
