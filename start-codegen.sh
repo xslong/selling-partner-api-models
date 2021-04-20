@@ -36,7 +36,7 @@ outpath="api-code"
 
 # 删除旧的接口代码
 #rm -f "$outpath/src/main/java/com/amazon/spapi/api/*Api.java"
-#rm -rf `ls "$outpath/src/main/java/com/amazon/spapi/model/"| grep -v ".java"`
+#rm -f "$outpath/src/main/java/com/amazon/spapi/model/"
 
 for((i=0;i<len;i+=2))
 do
