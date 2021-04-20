@@ -1,14 +1,43 @@
-## Selling Partner API Models
-This repository contains Swagger models for developers to use to create software to call Selling Partner APIs. Developers can use [swagger codegen](https://github.com/swagger-api/swagger-codegen) to generate client libraries from these models. Please refer to [selling-partner-api-docs](https://github.com/amzn/selling-partner-api-docs) for additional documentation and read the [Selling Partner Api Developer Guide](https://github.com/amzn/selling-partner-api-docs/blob/main/guides/developer-guide/SellingPartnerApiDeveloperGuide.md) for instructions to get started.
 
-The [models directory](https://github.com/amzn/selling-partner-api-models/tree/main/models) contains all of the currently available Selling Partner API models.
 
-The [clients directory](https://github.com/amzn/selling-partner-api-models/tree/main/clients) contains a [Java library](https://github.com/amzn/selling-partner-api-models/tree/main/clients/sellingpartner-api-aa-java) and a [C# library](https://github.com/amzn/selling-partner-api-models/tree/main/clients/sellingpartner-api-aa-csharp) with mustache templates for use with [swagger-codegen](https://swagger.io/tools/swagger-codegen/) to generate client libraries with authentication and authorization functionality included. The templates are located in *resources/swagger-codegen*.
 
-## Security
 
-See [CONTRIBUTING](CONTRIBUTING.md#security-issue-notifications) for more information.
 
-## License
 
-This project is licensed under the Apache-2.0 License.
+# pom.xml
+
+<java.version>1.8</java.version>
+
+<dependency>
+    <groupId>com.squareup.okhttp3</groupId>
+    <artifactId>okhttp</artifactId>
+    <version>3.14.9</version>
+</dependency>
+<dependency>
+    <groupId>com.squareup.okhttp3</groupId>
+    <artifactId>logging-interceptor</artifactId>
+    <version>3.14.9</version>
+</dependency>
+<dependency>
+    <groupId>org.projectlombok</groupId>
+    <artifactId>lombok</artifactId>
+    <version>1.18.8</version>
+    <scope>provided</scope>
+</dependency>
+<dependency>
+    <groupId>com.amazonaws</groupId>
+    <artifactId>aws-java-sdk-signer</artifactId>
+    <version>1.11.610</version>
+</dependency>
+<dependency>
+    <groupId>com.amazonaws</groupId>
+    <artifactId>aws-java-sdk-sts</artifactId>
+    <version>1.11.236</version>
+</dependency>
+
+修改导包
+ProgressResponseBody.java > okhttp3
+ProgressRequestBody.java
+HttpBasicAuth.java
+GzipRequestInterceptor.java
+ApiClient.java

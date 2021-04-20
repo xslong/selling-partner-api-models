@@ -32,7 +32,11 @@ len=${#models[@]}
 echo "module len is $len"
 
 package="com.amazon.spapi"
-outpath="./api-code"
+outpath="api-code"
+
+# 删除旧的接口代码
+#rm -f "$outpath/src/main/java/com/amazon/spapi/api/*Api.java"
+#rm -rf `ls "$outpath/src/main/java/com/amazon/spapi/model/"| grep -v ".java"`
 
 for((i=0;i<len;i+=2))
 do
@@ -46,7 +50,8 @@ do
   -DartifactVersion="v2021-04-20" \
   -DinvokerPackage="$package" \
   -DmodelPackage="$package.model.$modelName" \
-  -DapiPackage="$package.api"
+  -DapiPackage="$package.api" \
+  --import-mappings Error="$package.model.Error",ErrorList="$package.model.ErrorList"
 
 done
 
