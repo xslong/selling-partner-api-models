@@ -18,6 +18,7 @@ import {{invokerPackage}}.BeanValidationException;
 import com.google.gson.reflect.TypeToken;
 
 import java.io.IOException;
+import okhttp3.OkHttpClient;
 
 {{#useBeanValidation}}
 import javax.validation.constraints.*;
@@ -275,12 +276,18 @@ public class {{classname}} {
     {{/operation}}
 
     public static class Builder {
+        private OkHttpClient httpClient;
         private AWSAuthenticationCredentials awsAuthenticationCredentials;
         private LWAAuthorizationCredentials lwaAuthorizationCredentials;
         private String endpoint;
         private LWAAccessTokenCache lwaAccessTokenCache;
         private Boolean disableAccessTokenCache = false;
         private AWSAuthenticationCredentialsProvider awsAuthenticationCredentialsProvider;
+
+        public Builder httpClient(OkHttpClient httpClient) {
+            this.httpClient = httpClient;
+            return this;
+        }
 
         public Builder awsAuthenticationCredentials(AWSAuthenticationCredentials awsAuthenticationCredentials) {
             this.awsAuthenticationCredentials = awsAuthenticationCredentials;
@@ -314,6 +321,10 @@ public class {{classname}} {
         
 
         public {{classname}} build() {
+            if (httpClient == null) {
+                throw new RuntimeException("HttpClient not set");
+            }
+
             if (awsAuthenticationCredentials == null) {
                 throw new RuntimeException("AWSAuthenticationCredentials not set");
             }
@@ -345,7 +356,7 @@ public class {{classname}} {
                  lwaAuthorizationSigner = new LWAAuthorizationSigner(lwaAuthorizationCredentials,lwaAccessTokenCache);
             }
 
-            return new {{classname}}(new ApiClient()
+            return new {{classname}}(new ApiClient(httpClient)
                 .setAWSSigV4Signer(awsSigV4Signer)
                 .setLWAAuthorizationSigner(lwaAuthorizationSigner)
                 .setBasePath(endpoint));

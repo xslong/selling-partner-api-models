@@ -151,7 +151,7 @@ public class SignableRequestImplTest {
         underTest.addParameter("left", "左");
 
         HttpUrl actualHttpUrl = ((Request) underTest.getOriginalRequestObject())
-                .httpUrl();
+                .url();
 
         assertEquals(Collections.singletonList("true"), actualHttpUrl.queryParameterValues("test"));
         assertEquals(Collections.singletonList("blue"), actualHttpUrl.queryParameterValues("sky"));

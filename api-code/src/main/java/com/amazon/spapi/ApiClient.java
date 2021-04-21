@@ -79,12 +79,16 @@ public class ApiClient {
     private LWAAuthorizationSigner lwaAuthorizationSigner;
     private AWSSigV4Signer awsSigV4Signer;
 
+
     /*
      * Constructor for ApiClient
      */
-    public ApiClient() {
-        httpClient = new OkHttpClient();
 
+    public ApiClient() {
+        this.httpClient = new OkHttpClient();
+    }
+    public ApiClient(OkHttpClient okHttpClient) {
+        this.httpClient = okHttpClient;
 
         verifyingSsl = true;
 

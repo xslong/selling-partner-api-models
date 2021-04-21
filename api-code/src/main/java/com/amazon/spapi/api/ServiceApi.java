@@ -26,6 +26,7 @@ import com.amazon.spapi.StringUtil;
 import com.google.gson.reflect.TypeToken;
 
 import java.io.IOException;
+import okhttp3.OkHttpClient;
 
 
 import com.amazon.spapi.model.services.AddAppointmentRequest;
@@ -921,12 +922,18 @@ public class ServiceApi {
     }
 
     public static class Builder {
+        private OkHttpClient httpClient;
         private AWSAuthenticationCredentials awsAuthenticationCredentials;
         private LWAAuthorizationCredentials lwaAuthorizationCredentials;
         private String endpoint;
         private LWAAccessTokenCache lwaAccessTokenCache;
         private Boolean disableAccessTokenCache = false;
         private AWSAuthenticationCredentialsProvider awsAuthenticationCredentialsProvider;
+
+        public Builder httpClient(OkHttpClient httpClient) {
+            this.httpClient = httpClient;
+            return this;
+        }
 
         public Builder awsAuthenticationCredentials(AWSAuthenticationCredentials awsAuthenticationCredentials) {
             this.awsAuthenticationCredentials = awsAuthenticationCredentials;
@@ -960,6 +967,10 @@ public class ServiceApi {
         
 
         public ServiceApi build() {
+            if (httpClient == null) {
+                throw new RuntimeException("HttpClient not set");
+            }
+
             if (awsAuthenticationCredentials == null) {
                 throw new RuntimeException("AWSAuthenticationCredentials not set");
             }
@@ -991,7 +1002,7 @@ public class ServiceApi {
                  lwaAuthorizationSigner = new LWAAuthorizationSigner(lwaAuthorizationCredentials,lwaAccessTokenCache);
             }
 
-            return new ServiceApi(new ApiClient()
+            return new ServiceApi(new ApiClient(httpClient)
                 .setAWSSigV4Signer(awsSigV4Signer)
                 .setLWAAuthorizationSigner(lwaAuthorizationSigner)
                 .setBasePath(endpoint));
