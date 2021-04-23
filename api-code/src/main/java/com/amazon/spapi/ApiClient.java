@@ -956,8 +956,8 @@ public class ApiClient {
                     throw new ApiException(response.message(), e, response.code(), response.headers().toMultimap());
                 }
             }
-            System.out.println(respBody);
-            throw new ApiException(response.message(), response.code(), response.headers().toMultimap(), respBody);
+            String message = StringUtil.isEmpty(response.message()) ? respBody : response.message();
+            throw new ApiException(message, response.code(), response.headers().toMultimap(), respBody);
         }
     }
 
