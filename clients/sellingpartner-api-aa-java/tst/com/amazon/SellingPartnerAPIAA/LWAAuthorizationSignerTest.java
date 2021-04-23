@@ -56,15 +56,15 @@ public class LWAAuthorizationSignerTest {
     private Call mockCall;
 
     static {
-
-        underTestSeller = new LWAAuthorizationSigner(LWAAuthorizationCredentials.builder()
+        OkHttpClient okHttpClient = new OkHttpClient.Builder().build();
+        underTestSeller = new LWAAuthorizationSigner(okHttpClient, LWAAuthorizationCredentials.builder()
                 .clientId(TEST_CLIENT_ID)
                 .clientSecret(TEST_CLIENT_SECRET)
                 .refreshToken(TEST_REFRESH_TOKEN)
                 .endpoint(TEST_ENDPOINT)
                 .build());
 
-        underTestSellerless = new LWAAuthorizationSigner(LWAAuthorizationCredentials.builder()
+        underTestSellerless = new LWAAuthorizationSigner(okHttpClient, LWAAuthorizationCredentials.builder()
                 .clientId(TEST_CLIENT_ID)
                 .clientSecret(TEST_CLIENT_SECRET)
                 .withScopes(TEST_SCOPE_1, TEST_SCOPE_2)
@@ -150,8 +150,11 @@ public class LWAAuthorizationSignerTest {
     }
     
     @Test
-    public void returnSignedRequestWithAccessTokenFromLWACache() throws IOException { 
-        LWAClient testLWAClient = new LWAClient(TEST_ENDPOINT);
+    public void returnSignedRequestWithAccessTokenFromLWACache() throws IOException {
+
+        OkHttpClient okHttpClient = new OkHttpClient.Builder().build();
+
+        LWAClient testLWAClient = new LWAClient(TEST_ENDPOINT, okHttpClient);
         testLWAClient.setOkHttpClient(mockOkHttpClient);
         
         when(mockOkHttpClient.newCall(any(Request.class)))
@@ -161,7 +164,7 @@ public class LWAAuthorizationSignerTest {
         .thenReturn(buildResponse(200, "Azta|foo1", "1"));
 
         LWAAccessTokenCache testLWACache = new LWAAccessTokenCacheImpl();        
-        LWAAuthorizationSigner testlwaSigner = new LWAAuthorizationSigner(LWAAuthorizationCredentials.builder()
+        LWAAuthorizationSigner testlwaSigner = new LWAAuthorizationSigner(okHttpClient, LWAAuthorizationCredentials.builder()
                 .clientId(TEST_CLIENT_ID)
                 .clientSecret(TEST_CLIENT_SECRET)
                 .refreshToken(TEST_REFRESH_TOKEN)

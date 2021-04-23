@@ -82,7 +82,7 @@ public class LWAClientTest {
     public void init() {
         MockitoAnnotations.initMocks(this);
 
-        underTest = new LWAClient(TEST_ENDPOINT);
+        underTest = new LWAClient(TEST_ENDPOINT,mockOkHttpClient);
         underTest.setOkHttpClient(mockOkHttpClient);
     }
 
@@ -188,7 +188,7 @@ public class LWAClientTest {
     
     @Test
     public void returnAccessTokenFromCacheWithExpiry() throws IOException, InterruptedException {
-        LWAClient client = new LWAClient(TEST_ENDPOINT);
+        LWAClient client = new LWAClient(TEST_ENDPOINT, mockOkHttpClient);
         client.setOkHttpClient(mockOkHttpClient);
         when(mockOkHttpClient.newCall(any(Request.class)))
         .thenReturn(mockCall);

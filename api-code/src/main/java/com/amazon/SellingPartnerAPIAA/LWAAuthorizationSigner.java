@@ -1,5 +1,6 @@
 package com.amazon.SellingPartnerAPIAA;
 
+import okhttp3.OkHttpClient;
 import okhttp3.Request;
 import lombok.AccessLevel;
 import lombok.Getter;
@@ -37,9 +38,9 @@ public class LWAAuthorizationSigner {
      *
      * @param lwaAuthorizationCredentials LWA Authorization Credentials for token exchange
      */
-    public LWAAuthorizationSigner(LWAAuthorizationCredentials lwaAuthorizationCredentials) {
+    public LWAAuthorizationSigner(OkHttpClient okHttpClient, LWAAuthorizationCredentials lwaAuthorizationCredentials) {
 
-        lwaClient = new LWAClient(lwaAuthorizationCredentials.getEndpoint());
+        lwaClient = new LWAClient(lwaAuthorizationCredentials.getEndpoint(), okHttpClient);
 
         buildLWAAccessTokenRequestMeta(lwaAuthorizationCredentials);
 
@@ -50,10 +51,10 @@ public class LWAAuthorizationSigner {
     * Overloaded Constructor @param lwaAuthorizationCredentials LWA Authorization Credentials for token exchange
     * and LWAAccessTokenCache
     */
-    public LWAAuthorizationSigner(LWAAuthorizationCredentials lwaAuthorizationCredentials,
+    public LWAAuthorizationSigner(OkHttpClient okHttpClient, LWAAuthorizationCredentials lwaAuthorizationCredentials,
            LWAAccessTokenCache lwaAccessTokenCache) {
 
-       lwaClient = new LWAClient(lwaAuthorizationCredentials.getEndpoint());
+       lwaClient = new LWAClient(lwaAuthorizationCredentials.getEndpoint(), okHttpClient);
        lwaClient.setLWAAccessTokenCache(lwaAccessTokenCache);
 
        buildLWAAccessTokenRequestMeta(lwaAuthorizationCredentials);

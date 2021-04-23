@@ -728,13 +728,13 @@ public class ProductPricingApi {
             
             LWAAuthorizationSigner lwaAuthorizationSigner = null;            
             if (disableAccessTokenCache) {
-                lwaAuthorizationSigner = new LWAAuthorizationSigner(lwaAuthorizationCredentials);
+                lwaAuthorizationSigner = new LWAAuthorizationSigner(httpClient, lwaAuthorizationCredentials);
             }
             else {
                 if (lwaAccessTokenCache == null) {
                     lwaAccessTokenCache = new LWAAccessTokenCacheImpl();                  
                  }
-                 lwaAuthorizationSigner = new LWAAuthorizationSigner(lwaAuthorizationCredentials,lwaAccessTokenCache);
+                 lwaAuthorizationSigner = new LWAAuthorizationSigner(httpClient, lwaAuthorizationCredentials,lwaAccessTokenCache);
             }
 
             return new ProductPricingApi(new ApiClient(httpClient)

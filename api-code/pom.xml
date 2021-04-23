@@ -212,13 +212,30 @@
         <dependency>
             <groupId>com.amazonaws</groupId>
             <artifactId>aws-java-sdk-signer</artifactId>
-            <version>1.11.610</version>
+            <version>1.11.1001</version>
         </dependency>
         <dependency>
             <groupId>com.amazonaws</groupId>
             <artifactId>aws-java-sdk-sts</artifactId>
-            <version>1.11.236</version>
+            <version>1.11.1001</version>
         </dependency>
+<!--        <dependency>-->
+<!--            <groupId>com.amazonaws</groupId>-->
+<!--            <artifactId>aws-java-sdk-lambda</artifactId>-->
+<!--            <version>1.11.1001</version>-->
+<!--        </dependency>-->
+        <dependency>
+            <groupId>com.amazonaws</groupId>
+            <artifactId>aws-lambda-java-core</artifactId>
+            <version>1.2.1</version>
+        </dependency>
+        <dependency>
+            <groupId>com.amazonaws</groupId>
+            <artifactId>aws-lambda-java-events</artifactId>
+            <version>3.8.0</version>
+        </dependency>
+
+
 
         <dependency>
             <groupId>com.google.code.gson</groupId>

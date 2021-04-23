@@ -30,10 +30,10 @@ class LWAClient {
         this.lwaAccessTokenCache = tokenCache;
     }
 
-    LWAClient(String endpoint) {
-        okHttpClient = new OkHttpClient();
+    LWAClient(String endpoint, OkHttpClient okHttpClient) {
+        this.okHttpClient = okHttpClient;
         this.endpoint = endpoint;
-     }
+    }
 
     String getAccessToken(LWAAccessTokenRequestMeta lwaAccessTokenRequestMeta) {
         if (lwaAccessTokenCache != null) {

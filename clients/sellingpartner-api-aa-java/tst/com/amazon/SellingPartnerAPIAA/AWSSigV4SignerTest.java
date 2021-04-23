@@ -22,10 +22,10 @@ import static org.mockito.Mockito.verify;
 
 @RunWith(MockitoJUnitRunner.class)
 public class AWSSigV4SignerTest {
-    private static final String TEST_ACCESS_KEY_ID = "aKey";
-    private static final String TEST_SECRET_KEY = "sKey";
+    private static final String TEST_ACCESS_KEY_ID = "AKIAZPPRZQ2PLTPYVLNF";
+    private static final String TEST_SECRET_KEY = "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";
     private static final String TEST_REGION = "us-east";
-    private static final String TEST_ROLE_ARN = "arnrole";
+    private static final String TEST_ROLE_ARN = "arn:aws:iam::651731502750:role/sp-role";
     private static final String TEST_ROLESESSION_NAME = "test";
 
     @Mock
