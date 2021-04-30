@@ -4,11 +4,14 @@ import com.google.gson.Gson;
 import com.google.gson.annotations.SerializedName;
 import lombok.Data;
 import okhttp3.*;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import java.io.IOException;
 
 public class LWAExchangeRefreshToken {
 
+    static final Logger logger = LoggerFactory.getLogger(LWAExchangeRefreshToken.class);
 
     /**
      * 使用LWA授权交换LWA refresh token
@@ -38,8 +41,9 @@ public class LWAExchangeRefreshToken {
                 Gson gson = new Gson();
                 ResponseBody body = response.body();
                 if (body != null) {
-                    Result result = gson.fromJson(body.toString(), Result.class);
-                    return result;
+                    String content = body.string();
+                    logger.info("LWA exchange response :{}", content);
+                    return gson.fromJson(content, Result.class);
                 }
             }
         } catch (IOException e) {
