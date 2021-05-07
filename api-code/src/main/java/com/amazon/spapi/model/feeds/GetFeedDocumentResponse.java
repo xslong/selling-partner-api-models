@@ -15,6 +15,8 @@ package com.amazon.spapi.model.feeds;
 
 import java.util.Objects;
 import java.util.Arrays;
+import com.amazon.spapi.model.ErrorList;
+import com.amazon.spapi.model.feeds.FeedDocument;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
@@ -25,29 +27,51 @@ import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
 
 /**
- * CreateFeedDocumentSpecification
+ * Response schema.
  */
+@ApiModel(description = "Response schema.")
 
-public class CreateFeedDocumentSpecification {
-  @SerializedName("contentType")
-  private String contentType = null;
+public class GetFeedDocumentResponse {
+  @SerializedName("payload")
+  private FeedDocument payload = null;
 
-  public CreateFeedDocumentSpecification contentType(String contentType) {
-    this.contentType = contentType;
+  @SerializedName("errors")
+  private ErrorList errors = null;
+
+  public GetFeedDocumentResponse payload(FeedDocument payload) {
+    this.payload = payload;
     return this;
   }
 
    /**
-   * The content type of the feed.
-   * @return contentType
+   * Get payload
+   * @return payload
   **/
-  @ApiModelProperty(required = true, value = "The content type of the feed.")
-  public String getContentType() {
-    return contentType;
+  @ApiModelProperty(value = "")
+  public FeedDocument getPayload() {
+    return payload;
   }
 
-  public void setContentType(String contentType) {
-    this.contentType = contentType;
+  public void setPayload(FeedDocument payload) {
+    this.payload = payload;
+  }
+
+  public GetFeedDocumentResponse errors(ErrorList errors) {
+    this.errors = errors;
+    return this;
+  }
+
+   /**
+   * Get errors
+   * @return errors
+  **/
+  @ApiModelProperty(value = "")
+  public ErrorList getErrors() {
+    return errors;
+  }
+
+  public void setErrors(ErrorList errors) {
+    this.errors = errors;
   }
 
 
@@ -59,22 +83,24 @@ public class CreateFeedDocumentSpecification {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    CreateFeedDocumentSpecification createFeedDocumentSpecification = (CreateFeedDocumentSpecification) o;
-    return Objects.equals(this.contentType, createFeedDocumentSpecification.contentType);
+    GetFeedDocumentResponse getFeedDocumentResponse = (GetFeedDocumentResponse) o;
+    return Objects.equals(this.payload, getFeedDocumentResponse.payload) &&
+        Objects.equals(this.errors, getFeedDocumentResponse.errors);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(contentType);
+    return Objects.hash(payload, errors);
   }
 
 
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
-    sb.append("class CreateFeedDocumentSpecification {\n");
+    sb.append("class GetFeedDocumentResponse {\n");
     
-    sb.append("    contentType: ").append(toIndentedString(contentType)).append("\n");
+    sb.append("    payload: ").append(toIndentedString(payload)).append("\n");
+    sb.append("    errors: ").append(toIndentedString(errors)).append("\n");
     sb.append("}");
     return sb.toString();
   }

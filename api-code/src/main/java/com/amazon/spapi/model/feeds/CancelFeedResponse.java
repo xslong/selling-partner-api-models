@@ -15,16 +15,43 @@ package com.amazon.spapi.model.feeds;
 
 import java.util.Objects;
 import java.util.Arrays;
+import com.amazon.spapi.model.ErrorList;
+import com.google.gson.TypeAdapter;
+import com.google.gson.annotations.JsonAdapter;
+import com.google.gson.annotations.SerializedName;
+import com.google.gson.stream.JsonReader;
+import com.google.gson.stream.JsonWriter;
 import io.swagger.annotations.ApiModel;
-import java.util.HashMap;
-import java.util.Map;
+import io.swagger.annotations.ApiModelProperty;
+import java.io.IOException;
 
 /**
- * Additional options to control the feed. These vary by feed type.
+ * Response schema.
  */
-@ApiModel(description = "Additional options to control the feed. These vary by feed type.")
+@ApiModel(description = "Response schema.")
 
-public class FeedOptions extends HashMap<String, String> {
+public class CancelFeedResponse {
+  @SerializedName("errors")
+  private ErrorList errors = null;
+
+  public CancelFeedResponse errors(ErrorList errors) {
+    this.errors = errors;
+    return this;
+  }
+
+   /**
+   * Get errors
+   * @return errors
+  **/
+  @ApiModelProperty(value = "")
+  public ErrorList getErrors() {
+    return errors;
+  }
+
+  public void setErrors(ErrorList errors) {
+    this.errors = errors;
+  }
+
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -34,20 +61,22 @@ public class FeedOptions extends HashMap<String, String> {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    return super.equals(o);
+    CancelFeedResponse cancelFeedResponse = (CancelFeedResponse) o;
+    return Objects.equals(this.errors, cancelFeedResponse.errors);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(super.hashCode());
+    return Objects.hash(errors);
   }
 
 
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
-    sb.append("class FeedOptions {\n");
-    sb.append("    ").append(toIndentedString(super.toString())).append("\n");
+    sb.append("class CancelFeedResponse {\n");
+    
+    sb.append("    errors: ").append(toIndentedString(errors)).append("\n");
     sb.append("}");
     return sb.toString();
   }

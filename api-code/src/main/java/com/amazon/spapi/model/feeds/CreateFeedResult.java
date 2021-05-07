@@ -25,29 +25,29 @@ import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
 
 /**
- * CreateFeedDocumentSpecification
+ * CreateFeedResult
  */
 
-public class CreateFeedDocumentSpecification {
-  @SerializedName("contentType")
-  private String contentType = null;
+public class CreateFeedResult {
+  @SerializedName("feedId")
+  private String feedId = null;
 
-  public CreateFeedDocumentSpecification contentType(String contentType) {
-    this.contentType = contentType;
+  public CreateFeedResult feedId(String feedId) {
+    this.feedId = feedId;
     return this;
   }
 
    /**
-   * The content type of the feed.
-   * @return contentType
+   * The identifier for the feed. This identifier is unique only in combination with a seller ID.
+   * @return feedId
   **/
-  @ApiModelProperty(required = true, value = "The content type of the feed.")
-  public String getContentType() {
-    return contentType;
+  @ApiModelProperty(required = true, value = "The identifier for the feed. This identifier is unique only in combination with a seller ID.")
+  public String getFeedId() {
+    return feedId;
   }
 
-  public void setContentType(String contentType) {
-    this.contentType = contentType;
+  public void setFeedId(String feedId) {
+    this.feedId = feedId;
   }
 
 
@@ -59,22 +59,22 @@ public class CreateFeedDocumentSpecification {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    CreateFeedDocumentSpecification createFeedDocumentSpecification = (CreateFeedDocumentSpecification) o;
-    return Objects.equals(this.contentType, createFeedDocumentSpecification.contentType);
+    CreateFeedResult createFeedResult = (CreateFeedResult) o;
+    return Objects.equals(this.feedId, createFeedResult.feedId);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(contentType);
+    return Objects.hash(feedId);
   }
 
 
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
-    sb.append("class CreateFeedDocumentSpecification {\n");
+    sb.append("class CreateFeedResult {\n");
     
-    sb.append("    contentType: ").append(toIndentedString(contentType)).append("\n");
+    sb.append("    feedId: ").append(toIndentedString(feedId)).append("\n");
     sb.append("}");
     return sb.toString();
   }

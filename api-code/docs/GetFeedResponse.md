@@ -1,10 +1,10 @@
 
-# CreateFeedDocumentResponse
+# GetFeedResponse
 
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**payload** | [**CreateFeedDocumentResult**](CreateFeedDocumentResult.md) |  |  [optional]
+**payload** | [**Feed**](Feed.md) |  |  [optional]
 **errors** | [**ErrorList**](ErrorList.md) |  |  [optional]
 
 

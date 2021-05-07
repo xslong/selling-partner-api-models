@@ -8,7 +8,7 @@ models=(
   "fbainboundeligibility" "models/fba-inbound-eligibility-api-model/fbaInbound.json"
   "fbainventory" "models/fba-inventory-api-model/fbaInventory.json"
   "fbasmallandlight" "models/fba-small-and-light-api-model/fbaSmallandLight.json"
-  "feeds" "models/feeds-api-model/feeds_2021-06-30.json"
+  "feeds" "models/feeds-api-model/feeds_2020-09-04.json"
   "finances" "models/finances-api-model/financesV0.json"
   "fulfillmentinbound" "models/fulfillment-inbound-api-model/fulfillmentInboundV0.json"
   "fulfillmentoutbound" "models/fulfillment-outbound-api-model/fulfillmentOutbound_2020-07-01.json"
@@ -56,6 +56,7 @@ do
 done
 
 cp -r "clients/sellingpartner-api-aa-java/src/com/amazon/SellingPartnerAPIAA" "$outpath/src/main/java/com/amazon/"
+cp -r "clients/sellingpartner-api-documents-helper-java/src/main/java/com/amazon/spapi/documents" "$outpath/src/main/java/com/amazon/spapi/"
 
 
  # java -jar swagger-codegen-cli-2.4.13.jar generate -i models/sellers-api-model/sellers.json -l java -o api-code -t clients/sellingpartner-api-aa-java/resources/swagger-codegen/templates/ -c swagger-codegen-cli-config.json

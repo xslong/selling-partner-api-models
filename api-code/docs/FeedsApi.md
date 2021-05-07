@@ -4,17 +4,17 @@ All URIs are relative to *https://sellingpartnerapi-na.amazon.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**cancelFeed**](FeedsApi.md#cancelFeed) | **DELETE** /feeds/2021-06-30/feeds/{feedId} | 
-[**createFeed**](FeedsApi.md#createFeed) | **POST** /feeds/2021-06-30/feeds | 
-[**createFeedDocument**](FeedsApi.md#createFeedDocument) | **POST** /feeds/2021-06-30/documents | 
-[**getFeed**](FeedsApi.md#getFeed) | **GET** /feeds/2021-06-30/feeds/{feedId} | 
-[**getFeedDocument**](FeedsApi.md#getFeedDocument) | **GET** /feeds/2021-06-30/documents/{feedDocumentId} | 
-[**getFeeds**](FeedsApi.md#getFeeds) | **GET** /feeds/2021-06-30/feeds | 
+[**cancelFeed**](FeedsApi.md#cancelFeed) | **DELETE** /feeds/2020-09-04/feeds/{feedId} | 
+[**createFeed**](FeedsApi.md#createFeed) | **POST** /feeds/2020-09-04/feeds | 
+[**createFeedDocument**](FeedsApi.md#createFeedDocument) | **POST** /feeds/2020-09-04/documents | 
+[**getFeed**](FeedsApi.md#getFeed) | **GET** /feeds/2020-09-04/feeds/{feedId} | 
+[**getFeedDocument**](FeedsApi.md#getFeedDocument) | **GET** /feeds/2020-09-04/documents/{feedDocumentId} | 
+[**getFeeds**](FeedsApi.md#getFeeds) | **GET** /feeds/2020-09-04/feeds | 
 
 
 <a name="cancelFeed"></a>
 # **cancelFeed**
-> cancelFeed(feedId)
+> CancelFeedResponse cancelFeed(feedId)
 
 
 
@@ -30,7 +30,8 @@ Cancels the feed that you specify. Only feeds with processingStatus&#x3D;IN_QUEU
 FeedsApi apiInstance = new FeedsApi();
 String feedId = "feedId_example"; // String | The identifier for the feed. This identifier is unique only in combination with a seller ID.
 try {
-    apiInstance.cancelFeed(feedId);
+    CancelFeedResponse result = apiInstance.cancelFeed(feedId);
+    System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling FeedsApi#cancelFeed");
     e.printStackTrace();
@@ -45,7 +46,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-null (empty response body)
+[**CancelFeedResponse**](CancelFeedResponse.md)
 
 ### Authorization
 
@@ -62,7 +63,7 @@ No authorization required
 
 
 
-Creates a feed. Upload the contents of the feed document before calling this operation.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 0.0083 | 15 |  For more information, see \&quot;Usage Plans and Rate Limits\&quot; in the Selling Partner API documentation.
+Creates a feed. Encrypt and upload the contents of the feed document before calling this operation.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 0.0083 | 15 |  For more information, see \&quot;Usage Plans and Rate Limits\&quot; in the Selling Partner API documentation.
 
 ### Example
 ```java
@@ -107,7 +108,7 @@ No authorization required
 
 
 
-Creates a feed document for the feed type that you specify. This operation returns a presigned URL for uploading the feed document contents. It also returns a feedDocumentId value that you can pass in with a subsequent call to the createFeed operation.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 0.0083 | 15 |  For more information, see \&quot;Usage Plans and Rate Limits\&quot; in the Selling Partner API documentation.
+Creates a feed document for the feed type that you specify. This operation returns encryption details for encrypting the contents of the document, as well as a presigned URL for uploading the encrypted feed document contents. It also returns a feedDocumentId value that you can pass in with a subsequent call to the createFeed operation.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 0.0083 | 15 |  For more information, see \&quot;Usage Plans and Rate Limits\&quot; in the Selling Partner API documentation.
 
 ### Example
 ```java
@@ -148,7 +149,7 @@ No authorization required
 
 <a name="getFeed"></a>
 # **getFeed**
-> Feed getFeed(feedId)
+> GetFeedResponse getFeed(feedId)
 
 
 
@@ -164,7 +165,7 @@ Returns feed details (including the resultDocumentId, if available) for the feed
 FeedsApi apiInstance = new FeedsApi();
 String feedId = "feedId_example"; // String | The identifier for the feed. This identifier is unique only in combination with a seller ID.
 try {
-    Feed result = apiInstance.getFeed(feedId);
+    GetFeedResponse result = apiInstance.getFeed(feedId);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling FeedsApi#getFeed");
@@ -180,7 +181,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**Feed**](Feed.md)
+[**GetFeedResponse**](GetFeedResponse.md)
 
 ### Authorization
 
@@ -193,11 +194,11 @@ No authorization required
 
 <a name="getFeedDocument"></a>
 # **getFeedDocument**
-> FeedDocument getFeedDocument(feedDocumentId)
+> GetFeedDocumentResponse getFeedDocument(feedDocumentId)
 
 
 
-Returns the information required for retrieving a feed document&#39;s contents.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 0.0222 | 10 |  For more information, see \&quot;Usage Plans and Rate Limits\&quot; in the Selling Partner API documentation.
+Returns the information required for retrieving a feed document&#39;s contents. This includes a presigned URL for the feed document as well as the information required to decrypt the document&#39;s contents.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 0.0222 | 10 |  For more information, see \&quot;Usage Plans and Rate Limits\&quot; in the Selling Partner API documentation.
 
 ### Example
 ```java
@@ -209,7 +210,7 @@ Returns the information required for retrieving a feed document&#39;s contents. 
 FeedsApi apiInstance = new FeedsApi();
 String feedDocumentId = "feedDocumentId_example"; // String | The identifier of the feed document.
 try {
-    FeedDocument result = apiInstance.getFeedDocument(feedDocumentId);
+    GetFeedDocumentResponse result = apiInstance.getFeedDocument(feedDocumentId);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling FeedsApi#getFeedDocument");
@@ -225,7 +226,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**FeedDocument**](FeedDocument.md)
+[**GetFeedDocumentResponse**](GetFeedDocumentResponse.md)
 
 ### Authorization
 
