@@ -30,58 +30,13 @@ import java.io.IOException;
 @ApiModel(description = "Describes a granularity at which inventory data can be aggregated. For example, if you use Marketplace granularity, the fulfillable quantity will reflect inventory that could be fulfilled in the given marketplace.")
 
 public class Granularity {
-  /**
-   * The granularity type for the inventory aggregation level.
-   */
-  @JsonAdapter(GranularityTypeEnum.Adapter.class)
-  public enum GranularityTypeEnum {
-    MARKETPLACE("Marketplace");
-
-    private String value;
-
-    GranularityTypeEnum(String value) {
-      this.value = value;
-    }
-
-    public String getValue() {
-      return value;
-    }
-
-    @Override
-    public String toString() {
-      return String.valueOf(value);
-    }
-
-    public static GranularityTypeEnum fromValue(String text) {
-      for (GranularityTypeEnum b : GranularityTypeEnum.values()) {
-        if (String.valueOf(b.value).equals(text)) {
-          return b;
-        }
-      }
-      return null;
-    }
-
-    public static class Adapter extends TypeAdapter<GranularityTypeEnum> {
-      @Override
-      public void write(final JsonWriter jsonWriter, final GranularityTypeEnum enumeration) throws IOException {
-        jsonWriter.value(enumeration.getValue());
-      }
-
-      @Override
-      public GranularityTypeEnum read(final JsonReader jsonReader) throws IOException {
-        String value = jsonReader.nextString();
-        return GranularityTypeEnum.fromValue(String.valueOf(value));
-      }
-    }
-  }
-
   @SerializedName("granularityType")
-  private GranularityTypeEnum granularityType = null;
+  private String granularityType = null;
 
   @SerializedName("granularityId")
   private String granularityId = null;
 
-  public Granularity granularityType(GranularityTypeEnum granularityType) {
+  public Granularity granularityType(String granularityType) {
     this.granularityType = granularityType;
     return this;
   }
@@ -91,11 +46,11 @@ public class Granularity {
    * @return granularityType
   **/
   @ApiModelProperty(value = "The granularity type for the inventory aggregation level.")
-  public GranularityTypeEnum getGranularityType() {
+  public String getGranularityType() {
     return granularityType;
   }
 
-  public void setGranularityType(GranularityTypeEnum granularityType) {
+  public void setGranularityType(String granularityType) {
     this.granularityType = granularityType;
   }
 

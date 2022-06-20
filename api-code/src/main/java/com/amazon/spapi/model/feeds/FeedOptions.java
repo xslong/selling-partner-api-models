@@ -20,9 +20,9 @@ import java.util.HashMap;
 import java.util.Map;
 
 /**
- * Additional options to control the feed. These vary by feed type.
+ * Additional options to control the feed. For feeds that use the feedOptions parameter, you can find the parameter values in the feed description in [feedType values](https://github.com/amzn/selling-partner-api-docs/blob/main/references/feeds-api/feedtype-values.md).
  */
-@ApiModel(description = "Additional options to control the feed. These vary by feed type.")
+@ApiModel(description = "Additional options to control the feed. For feeds that use the feedOptions parameter, you can find the parameter values in the feed description in [feedType values](https://github.com/amzn/selling-partner-api-docs/blob/main/references/feeds-api/feedtype-values.md).")
 
 public class FeedOptions extends HashMap<String, String> {
 

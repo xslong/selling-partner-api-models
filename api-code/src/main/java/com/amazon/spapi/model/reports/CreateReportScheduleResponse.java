@@ -25,8 +25,9 @@ import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
 
 /**
- * CreateReportScheduleResponse
+ * Response schema.
  */
+@ApiModel(description = "Response schema.")
 
 public class CreateReportScheduleResponse {
   @SerializedName("reportScheduleId")

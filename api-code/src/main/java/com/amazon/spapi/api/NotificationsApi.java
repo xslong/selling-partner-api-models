@@ -1,6 +1,6 @@
 /*
  * Selling Partner API for Notifications
- * The Selling Partner API for Notifications lets you subscribe to notifications that are relevant to a selling partner's business. Using this API you can create a destination to receive notifications, subscribe to notifications, delete notification subscriptions, and more.
+ * The Selling Partner API for Notifications lets you subscribe to notifications that are relevant to a selling partner's business. Using this API you can create a destination to receive notifications, subscribe to notifications, delete notification subscriptions, and more.  For more information, see the [Notifications Use Case Guide](https://github.com/amzn/selling-partner-api-docs/blob/main/guides/en-US/use-case-guides/notifications-api-use-case-guide/notifications-use-case-guide-v1.md)
  *
  * OpenAPI spec version: v1
  * 
@@ -198,7 +198,7 @@ public class NotificationsApi {
     /**
      * Build call for createSubscription
      * @param body  (required)
-     * @param notificationType The type of notification to which you want to subscribe.   For more information about notification types, see the Notifications API Use Case Guide. (required)
+     * @param notificationType The type of notification.   For more information about notification types, see [the Notifications API Use Case Guide](https://github.com/amzn/selling-partner-api-docs/blob/main/guides/en-US/use-case-guides/notifications-api-use-case-guide/notifications-use-case-guide-v1.md). (required)
      * @param progressListener Progress listener
      * @param progressRequestListener Progress request listener
      * @return Call to execute
@@ -269,7 +269,7 @@ public class NotificationsApi {
      * 
      * Creates a subscription for the specified notification type to be delivered to the specified destination. Before you can subscribe, you must first create the destination by calling the createDestination operation.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 1 | 5 |  For more information, see \&quot;Usage Plans and Rate Limits\&quot; in the Selling Partner API documentation.
      * @param body  (required)
-     * @param notificationType The type of notification to which you want to subscribe.   For more information about notification types, see the Notifications API Use Case Guide. (required)
+     * @param notificationType The type of notification.   For more information about notification types, see [the Notifications API Use Case Guide](https://github.com/amzn/selling-partner-api-docs/blob/main/guides/en-US/use-case-guides/notifications-api-use-case-guide/notifications-use-case-guide-v1.md). (required)
      * @return CreateSubscriptionResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
@@ -282,7 +282,7 @@ public class NotificationsApi {
      * 
      * Creates a subscription for the specified notification type to be delivered to the specified destination. Before you can subscribe, you must first create the destination by calling the createDestination operation.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 1 | 5 |  For more information, see \&quot;Usage Plans and Rate Limits\&quot; in the Selling Partner API documentation.
      * @param body  (required)
-     * @param notificationType The type of notification to which you want to subscribe.   For more information about notification types, see the Notifications API Use Case Guide. (required)
+     * @param notificationType The type of notification.   For more information about notification types, see [the Notifications API Use Case Guide](https://github.com/amzn/selling-partner-api-docs/blob/main/guides/en-US/use-case-guides/notifications-api-use-case-guide/notifications-use-case-guide-v1.md). (required)
      * @return ApiResponse&lt;CreateSubscriptionResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
@@ -296,7 +296,7 @@ public class NotificationsApi {
      *  (asynchronously)
      * Creates a subscription for the specified notification type to be delivered to the specified destination. Before you can subscribe, you must first create the destination by calling the createDestination operation.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 1 | 5 |  For more information, see \&quot;Usage Plans and Rate Limits\&quot; in the Selling Partner API documentation.
      * @param body  (required)
-     * @param notificationType The type of notification to which you want to subscribe.   For more information about notification types, see the Notifications API Use Case Guide. (required)
+     * @param notificationType The type of notification.   For more information about notification types, see [the Notifications API Use Case Guide](https://github.com/amzn/selling-partner-api-docs/blob/main/guides/en-US/use-case-guides/notifications-api-use-case-guide/notifications-use-case-guide-v1.md). (required)
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
@@ -453,7 +453,7 @@ public class NotificationsApi {
     /**
      * Build call for deleteSubscriptionById
      * @param subscriptionId The identifier for the subscription that you want to delete. (required)
-     * @param notificationType The type of notification to which you want to subscribe.   For more information about notification types, see the Notifications API Use Case Guide. (required)
+     * @param notificationType The type of notification.   For more information about notification types, see [the Notifications API Use Case Guide](https://github.com/amzn/selling-partner-api-docs/blob/main/guides/en-US/use-case-guides/notifications-api-use-case-guide/notifications-use-case-guide-v1.md). (required)
      * @param progressListener Progress listener
      * @param progressRequestListener Progress request listener
      * @return Call to execute
@@ -525,7 +525,7 @@ public class NotificationsApi {
      * 
      * Deletes the subscription indicated by the subscription identifier and notification type that you specify. The subscription identifier can be for any subscription associated with your application. After you successfully call this operation, notifications will stop being sent for the associated subscription. The deleteSubscriptionById API is grantless. For more information, see \&quot;Grantless operations\&quot; in the Selling Partner API Developer Guide.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 1 | 5 |  For more information, see \&quot;Usage Plans and Rate Limits\&quot; in the Selling Partner API documentation.
      * @param subscriptionId The identifier for the subscription that you want to delete. (required)
-     * @param notificationType The type of notification to which you want to subscribe.   For more information about notification types, see the Notifications API Use Case Guide. (required)
+     * @param notificationType The type of notification.   For more information about notification types, see [the Notifications API Use Case Guide](https://github.com/amzn/selling-partner-api-docs/blob/main/guides/en-US/use-case-guides/notifications-api-use-case-guide/notifications-use-case-guide-v1.md). (required)
      * @return DeleteSubscriptionByIdResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
@@ -538,7 +538,7 @@ public class NotificationsApi {
      * 
      * Deletes the subscription indicated by the subscription identifier and notification type that you specify. The subscription identifier can be for any subscription associated with your application. After you successfully call this operation, notifications will stop being sent for the associated subscription. The deleteSubscriptionById API is grantless. For more information, see \&quot;Grantless operations\&quot; in the Selling Partner API Developer Guide.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 1 | 5 |  For more information, see \&quot;Usage Plans and Rate Limits\&quot; in the Selling Partner API documentation.
      * @param subscriptionId The identifier for the subscription that you want to delete. (required)
-     * @param notificationType The type of notification to which you want to subscribe.   For more information about notification types, see the Notifications API Use Case Guide. (required)
+     * @param notificationType The type of notification.   For more information about notification types, see [the Notifications API Use Case Guide](https://github.com/amzn/selling-partner-api-docs/blob/main/guides/en-US/use-case-guides/notifications-api-use-case-guide/notifications-use-case-guide-v1.md). (required)
      * @return ApiResponse&lt;DeleteSubscriptionByIdResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
@@ -552,7 +552,7 @@ public class NotificationsApi {
      *  (asynchronously)
      * Deletes the subscription indicated by the subscription identifier and notification type that you specify. The subscription identifier can be for any subscription associated with your application. After you successfully call this operation, notifications will stop being sent for the associated subscription. The deleteSubscriptionById API is grantless. For more information, see \&quot;Grantless operations\&quot; in the Selling Partner API Developer Guide.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 1 | 5 |  For more information, see \&quot;Usage Plans and Rate Limits\&quot; in the Selling Partner API documentation.
      * @param subscriptionId The identifier for the subscription that you want to delete. (required)
-     * @param notificationType The type of notification to which you want to subscribe.   For more information about notification types, see the Notifications API Use Case Guide. (required)
+     * @param notificationType The type of notification.   For more information about notification types, see [the Notifications API Use Case Guide](https://github.com/amzn/selling-partner-api-docs/blob/main/guides/en-US/use-case-guides/notifications-api-use-case-guide/notifications-use-case-guide-v1.md). (required)
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
@@ -821,7 +821,7 @@ public class NotificationsApi {
     }
     /**
      * Build call for getSubscription
-     * @param notificationType The type of notification to which you want to subscribe.   For more information about notification types, see the Notifications API Use Case Guide. (required)
+     * @param notificationType The type of notification.   For more information about notification types, see [the Notifications API Use Case Guide](https://github.com/amzn/selling-partner-api-docs/blob/main/guides/en-US/use-case-guides/notifications-api-use-case-guide/notifications-use-case-guide-v1.md). (required)
      * @param progressListener Progress listener
      * @param progressRequestListener Progress request listener
      * @return Call to execute
@@ -886,7 +886,7 @@ public class NotificationsApi {
     /**
      * 
      * Returns information about subscriptions of the specified notification type. You can use this API to get subscription information when you do not have a subscription identifier.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 1 | 5 |  For more information, see \&quot;Usage Plans and Rate Limits\&quot; in the Selling Partner API documentation.
-     * @param notificationType The type of notification to which you want to subscribe.   For more information about notification types, see the Notifications API Use Case Guide. (required)
+     * @param notificationType The type of notification.   For more information about notification types, see [the Notifications API Use Case Guide](https://github.com/amzn/selling-partner-api-docs/blob/main/guides/en-US/use-case-guides/notifications-api-use-case-guide/notifications-use-case-guide-v1.md). (required)
      * @return GetSubscriptionResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
@@ -898,7 +898,7 @@ public class NotificationsApi {
     /**
      * 
      * Returns information about subscriptions of the specified notification type. You can use this API to get subscription information when you do not have a subscription identifier.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 1 | 5 |  For more information, see \&quot;Usage Plans and Rate Limits\&quot; in the Selling Partner API documentation.
-     * @param notificationType The type of notification to which you want to subscribe.   For more information about notification types, see the Notifications API Use Case Guide. (required)
+     * @param notificationType The type of notification.   For more information about notification types, see [the Notifications API Use Case Guide](https://github.com/amzn/selling-partner-api-docs/blob/main/guides/en-US/use-case-guides/notifications-api-use-case-guide/notifications-use-case-guide-v1.md). (required)
      * @return ApiResponse&lt;GetSubscriptionResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
@@ -911,7 +911,7 @@ public class NotificationsApi {
     /**
      *  (asynchronously)
      * Returns information about subscriptions of the specified notification type. You can use this API to get subscription information when you do not have a subscription identifier.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 1 | 5 |  For more information, see \&quot;Usage Plans and Rate Limits\&quot; in the Selling Partner API documentation.
-     * @param notificationType The type of notification to which you want to subscribe.   For more information about notification types, see the Notifications API Use Case Guide. (required)
+     * @param notificationType The type of notification.   For more information about notification types, see [the Notifications API Use Case Guide](https://github.com/amzn/selling-partner-api-docs/blob/main/guides/en-US/use-case-guides/notifications-api-use-case-guide/notifications-use-case-guide-v1.md). (required)
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
@@ -945,7 +945,7 @@ public class NotificationsApi {
     /**
      * Build call for getSubscriptionById
      * @param subscriptionId The identifier for the subscription that you want to get. (required)
-     * @param notificationType The type of notification to which you want to subscribe.   For more information about notification types, see the Notifications API Use Case Guide. (required)
+     * @param notificationType The type of notification.   For more information about notification types, see [the Notifications API Use Case Guide](https://github.com/amzn/selling-partner-api-docs/blob/main/guides/en-US/use-case-guides/notifications-api-use-case-guide/notifications-use-case-guide-v1.md). (required)
      * @param progressListener Progress listener
      * @param progressRequestListener Progress request listener
      * @return Call to execute
@@ -1017,7 +1017,7 @@ public class NotificationsApi {
      * 
      * Returns information about a subscription for the specified notification type. The getSubscriptionById API is grantless. For more information, see \&quot;Grantless operations\&quot; in the Selling Partner API Developer Guide.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 1 | 5 |  For more information, see \&quot;Usage Plans and Rate Limits\&quot; in the Selling Partner API documentation.
      * @param subscriptionId The identifier for the subscription that you want to get. (required)
-     * @param notificationType The type of notification to which you want to subscribe.   For more information about notification types, see the Notifications API Use Case Guide. (required)
+     * @param notificationType The type of notification.   For more information about notification types, see [the Notifications API Use Case Guide](https://github.com/amzn/selling-partner-api-docs/blob/main/guides/en-US/use-case-guides/notifications-api-use-case-guide/notifications-use-case-guide-v1.md). (required)
      * @return GetSubscriptionByIdResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
@@ -1030,7 +1030,7 @@ public class NotificationsApi {
      * 
      * Returns information about a subscription for the specified notification type. The getSubscriptionById API is grantless. For more information, see \&quot;Grantless operations\&quot; in the Selling Partner API Developer Guide.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 1 | 5 |  For more information, see \&quot;Usage Plans and Rate Limits\&quot; in the Selling Partner API documentation.
      * @param subscriptionId The identifier for the subscription that you want to get. (required)
-     * @param notificationType The type of notification to which you want to subscribe.   For more information about notification types, see the Notifications API Use Case Guide. (required)
+     * @param notificationType The type of notification.   For more information about notification types, see [the Notifications API Use Case Guide](https://github.com/amzn/selling-partner-api-docs/blob/main/guides/en-US/use-case-guides/notifications-api-use-case-guide/notifications-use-case-guide-v1.md). (required)
      * @return ApiResponse&lt;GetSubscriptionByIdResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
@@ -1044,7 +1044,7 @@ public class NotificationsApi {
      *  (asynchronously)
      * Returns information about a subscription for the specified notification type. The getSubscriptionById API is grantless. For more information, see \&quot;Grantless operations\&quot; in the Selling Partner API Developer Guide.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 1 | 5 |  For more information, see \&quot;Usage Plans and Rate Limits\&quot; in the Selling Partner API documentation.
      * @param subscriptionId The identifier for the subscription that you want to get. (required)
-     * @param notificationType The type of notification to which you want to subscribe.   For more information about notification types, see the Notifications API Use Case Guide. (required)
+     * @param notificationType The type of notification.   For more information about notification types, see [the Notifications API Use Case Guide](https://github.com/amzn/selling-partner-api-docs/blob/main/guides/en-US/use-case-guides/notifications-api-use-case-guide/notifications-use-case-guide-v1.md). (required)
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object

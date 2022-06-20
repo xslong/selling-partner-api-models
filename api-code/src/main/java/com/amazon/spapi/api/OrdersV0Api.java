@@ -135,7 +135,7 @@ public class OrdersV0Api {
 
     /**
      * 
-     * Returns the order indicated by the specified order ID.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 1 | 1 |  For more information, see \&quot;Usage Plans and Rate Limits\&quot; in the Selling Partner API documentation.
+     * Returns the order indicated by the specified order ID.  **Usage Plans:**  | Plan type | Rate (requests per second) | Burst | | ---- | ---- | ---- | |Default| 0.0055 | 20 | |Selling partner specific| Variable | Variable |  The x-amzn-RateLimit-Limit response header returns the usage plan rate limits that were applied to the requested operation. Rate limits for some selling partners will vary from the default rate and burst shown in the table above. For more information, see \&quot;Usage Plans and Rate Limits\&quot; in the Selling Partner API documentation.
      * @param orderId An Amazon-defined order identifier, in 3-7-7 format. (required)
      * @return GetOrderResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -147,7 +147,7 @@ public class OrdersV0Api {
 
     /**
      * 
-     * Returns the order indicated by the specified order ID.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 1 | 1 |  For more information, see \&quot;Usage Plans and Rate Limits\&quot; in the Selling Partner API documentation.
+     * Returns the order indicated by the specified order ID.  **Usage Plans:**  | Plan type | Rate (requests per second) | Burst | | ---- | ---- | ---- | |Default| 0.0055 | 20 | |Selling partner specific| Variable | Variable |  The x-amzn-RateLimit-Limit response header returns the usage plan rate limits that were applied to the requested operation. Rate limits for some selling partners will vary from the default rate and burst shown in the table above. For more information, see \&quot;Usage Plans and Rate Limits\&quot; in the Selling Partner API documentation.
      * @param orderId An Amazon-defined order identifier, in 3-7-7 format. (required)
      * @return ApiResponse&lt;GetOrderResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -160,7 +160,7 @@ public class OrdersV0Api {
 
     /**
      *  (asynchronously)
-     * Returns the order indicated by the specified order ID.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 1 | 1 |  For more information, see \&quot;Usage Plans and Rate Limits\&quot; in the Selling Partner API documentation.
+     * Returns the order indicated by the specified order ID.  **Usage Plans:**  | Plan type | Rate (requests per second) | Burst | | ---- | ---- | ---- | |Default| 0.0055 | 20 | |Selling partner specific| Variable | Variable |  The x-amzn-RateLimit-Limit response header returns the usage plan rate limits that were applied to the requested operation. Rate limits for some selling partners will vary from the default rate and burst shown in the table above. For more information, see \&quot;Usage Plans and Rate Limits\&quot; in the Selling Partner API documentation.
      * @param orderId An Amazon-defined order identifier, in 3-7-7 format. (required)
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
@@ -258,7 +258,7 @@ public class OrdersV0Api {
 
     /**
      * 
-     * Returns the shipping address for the order indicated by the specified order ID.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 1 | 1 |  For more information, see \&quot;Usage Plans and Rate Limits\&quot; in the Selling Partner API documentation.
+     * Returns the shipping address for the specified order.  **Important.** We recommend using the getOrders operation to get shipping address information for an order, as the getOrderAddress operation is scheduled for deprecation on January 12, 2022. For more information, see the [Tokens API Use Case Guide](https://github.com/amzn/selling-partner-api-docs/blob/main/guides/en-US/use-case-guides/tokens-api-use-case-guide/tokens-API-use-case-guide-2021-03-01.md).  **Usage Plans:**  | Plan type | Rate (requests per second) | Burst | | ---- | ---- | ---- | |Default| 0.0055 | 20 | |Selling partner specific| Variable | Variable |  The x-amzn-RateLimit-Limit response header returns the usage plan rate limits that were applied to the requested operation. Rate limits for some selling partners will vary from the default rate and burst shown in the table above. For more information, see \&quot;Usage Plans and Rate Limits\&quot; in the Selling Partner API documentation.
      * @param orderId An orderId is an Amazon-defined order identifier, in 3-7-7 format. (required)
      * @return GetOrderAddressResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -270,7 +270,7 @@ public class OrdersV0Api {
 
     /**
      * 
-     * Returns the shipping address for the order indicated by the specified order ID.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 1 | 1 |  For more information, see \&quot;Usage Plans and Rate Limits\&quot; in the Selling Partner API documentation.
+     * Returns the shipping address for the specified order.  **Important.** We recommend using the getOrders operation to get shipping address information for an order, as the getOrderAddress operation is scheduled for deprecation on January 12, 2022. For more information, see the [Tokens API Use Case Guide](https://github.com/amzn/selling-partner-api-docs/blob/main/guides/en-US/use-case-guides/tokens-api-use-case-guide/tokens-API-use-case-guide-2021-03-01.md).  **Usage Plans:**  | Plan type | Rate (requests per second) | Burst | | ---- | ---- | ---- | |Default| 0.0055 | 20 | |Selling partner specific| Variable | Variable |  The x-amzn-RateLimit-Limit response header returns the usage plan rate limits that were applied to the requested operation. Rate limits for some selling partners will vary from the default rate and burst shown in the table above. For more information, see \&quot;Usage Plans and Rate Limits\&quot; in the Selling Partner API documentation.
      * @param orderId An orderId is an Amazon-defined order identifier, in 3-7-7 format. (required)
      * @return ApiResponse&lt;GetOrderAddressResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -283,7 +283,7 @@ public class OrdersV0Api {
 
     /**
      *  (asynchronously)
-     * Returns the shipping address for the order indicated by the specified order ID.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 1 | 1 |  For more information, see \&quot;Usage Plans and Rate Limits\&quot; in the Selling Partner API documentation.
+     * Returns the shipping address for the specified order.  **Important.** We recommend using the getOrders operation to get shipping address information for an order, as the getOrderAddress operation is scheduled for deprecation on January 12, 2022. For more information, see the [Tokens API Use Case Guide](https://github.com/amzn/selling-partner-api-docs/blob/main/guides/en-US/use-case-guides/tokens-api-use-case-guide/tokens-API-use-case-guide-2021-03-01.md).  **Usage Plans:**  | Plan type | Rate (requests per second) | Burst | | ---- | ---- | ---- | |Default| 0.0055 | 20 | |Selling partner specific| Variable | Variable |  The x-amzn-RateLimit-Limit response header returns the usage plan rate limits that were applied to the requested operation. Rate limits for some selling partners will vary from the default rate and burst shown in the table above. For more information, see \&quot;Usage Plans and Rate Limits\&quot; in the Selling Partner API documentation.
      * @param orderId An orderId is an Amazon-defined order identifier, in 3-7-7 format. (required)
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
@@ -381,7 +381,7 @@ public class OrdersV0Api {
 
     /**
      * 
-     * Returns buyer information for the order indicated by the specified order ID.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 1 | 1 |  For more information, see \&quot;Usage Plans and Rate Limits\&quot; in the Selling Partner API documentation.
+     * Returns buyer information for the specified order.  **Important.** We recommend using the getOrders operation to get buyer information for an order, as the getOrderBuyerInfo operation is scheduled for deprecation on January 12, 2022. For more information, see the [Tokens API Use Case Guide](https://github.com/amzn/selling-partner-api-docs/blob/main/guides/en-US/use-case-guides/tokens-api-use-case-guide/tokens-API-use-case-guide-2021-03-01.md).  **Usage Plans:**  | Plan type | Rate (requests per second) | Burst | | ---- | ---- | ---- | |Default| 0.0055 | 20 | |Selling partner specific| Variable | Variable |  The x-amzn-RateLimit-Limit response header returns the usage plan rate limits that were applied to the requested operation. Rate limits for some selling partners will vary from the default rate and burst shown in the table above. For more information, see \&quot;Usage Plans and Rate Limits\&quot; in the Selling Partner API documentation.
      * @param orderId An orderId is an Amazon-defined order identifier, in 3-7-7 format. (required)
      * @return GetOrderBuyerInfoResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -393,7 +393,7 @@ public class OrdersV0Api {
 
     /**
      * 
-     * Returns buyer information for the order indicated by the specified order ID.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 1 | 1 |  For more information, see \&quot;Usage Plans and Rate Limits\&quot; in the Selling Partner API documentation.
+     * Returns buyer information for the specified order.  **Important.** We recommend using the getOrders operation to get buyer information for an order, as the getOrderBuyerInfo operation is scheduled for deprecation on January 12, 2022. For more information, see the [Tokens API Use Case Guide](https://github.com/amzn/selling-partner-api-docs/blob/main/guides/en-US/use-case-guides/tokens-api-use-case-guide/tokens-API-use-case-guide-2021-03-01.md).  **Usage Plans:**  | Plan type | Rate (requests per second) | Burst | | ---- | ---- | ---- | |Default| 0.0055 | 20 | |Selling partner specific| Variable | Variable |  The x-amzn-RateLimit-Limit response header returns the usage plan rate limits that were applied to the requested operation. Rate limits for some selling partners will vary from the default rate and burst shown in the table above. For more information, see \&quot;Usage Plans and Rate Limits\&quot; in the Selling Partner API documentation.
      * @param orderId An orderId is an Amazon-defined order identifier, in 3-7-7 format. (required)
      * @return ApiResponse&lt;GetOrderBuyerInfoResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -406,7 +406,7 @@ public class OrdersV0Api {
 
     /**
      *  (asynchronously)
-     * Returns buyer information for the order indicated by the specified order ID.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 1 | 1 |  For more information, see \&quot;Usage Plans and Rate Limits\&quot; in the Selling Partner API documentation.
+     * Returns buyer information for the specified order.  **Important.** We recommend using the getOrders operation to get buyer information for an order, as the getOrderBuyerInfo operation is scheduled for deprecation on January 12, 2022. For more information, see the [Tokens API Use Case Guide](https://github.com/amzn/selling-partner-api-docs/blob/main/guides/en-US/use-case-guides/tokens-api-use-case-guide/tokens-API-use-case-guide-2021-03-01.md).  **Usage Plans:**  | Plan type | Rate (requests per second) | Burst | | ---- | ---- | ---- | |Default| 0.0055 | 20 | |Selling partner specific| Variable | Variable |  The x-amzn-RateLimit-Limit response header returns the usage plan rate limits that were applied to the requested operation. Rate limits for some selling partners will vary from the default rate and burst shown in the table above. For more information, see \&quot;Usage Plans and Rate Limits\&quot; in the Selling Partner API documentation.
      * @param orderId An orderId is an Amazon-defined order identifier, in 3-7-7 format. (required)
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
@@ -507,7 +507,7 @@ public class OrdersV0Api {
 
     /**
      * 
-     * Returns detailed order item information for the order indicated by the specified order ID. If NextToken is provided, it&#39;s used to retrieve the next page of order items.  Note: When an order is in the Pending state (the order has been placed but payment has not been authorized), the getOrderItems operation does not return information about pricing, taxes, shipping charges, gift status or promotions for the order items in the order. After an order leaves the Pending state (this occurs when payment has been authorized) and enters the Unshipped, Partially Shipped, or Shipped state, the getOrderItems operation returns information about pricing, taxes, shipping charges, gift status and promotions for the order items in the order.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 1 | 1 |  For more information, see \&quot;Usage Plans and Rate Limits\&quot; in the Selling Partner API documentation.
+     * Returns detailed order item information for the order indicated by the specified order ID. If NextToken is provided, it&#39;s used to retrieve the next page of order items.  Note: When an order is in the Pending state (the order has been placed but payment has not been authorized), the getOrderItems operation does not return information about pricing, taxes, shipping charges, gift status or promotions for the order items in the order. After an order leaves the Pending state (this occurs when payment has been authorized) and enters the Unshipped, Partially Shipped, or Shipped state, the getOrderItems operation returns information about pricing, taxes, shipping charges, gift status and promotions for the order items in the order.  **Usage Plans:**  | Plan type | Rate (requests per second) | Burst | | ---- | ---- | ---- | |Default| 0.0055 | 20 | |Selling partner specific| Variable | Variable |  The x-amzn-RateLimit-Limit response header returns the usage plan rate limits that were applied to the requested operation. Rate limits for some selling partners will vary from the default rate and burst shown in the table above. For more information, see \&quot;Usage Plans and Rate Limits\&quot; in the Selling Partner API documentation.
      * @param orderId An Amazon-defined order identifier, in 3-7-7 format. (required)
      * @param nextToken A string token returned in the response of your previous request. (optional)
      * @return GetOrderItemsResponse
@@ -520,7 +520,7 @@ public class OrdersV0Api {
 
     /**
      * 
-     * Returns detailed order item information for the order indicated by the specified order ID. If NextToken is provided, it&#39;s used to retrieve the next page of order items.  Note: When an order is in the Pending state (the order has been placed but payment has not been authorized), the getOrderItems operation does not return information about pricing, taxes, shipping charges, gift status or promotions for the order items in the order. After an order leaves the Pending state (this occurs when payment has been authorized) and enters the Unshipped, Partially Shipped, or Shipped state, the getOrderItems operation returns information about pricing, taxes, shipping charges, gift status and promotions for the order items in the order.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 1 | 1 |  For more information, see \&quot;Usage Plans and Rate Limits\&quot; in the Selling Partner API documentation.
+     * Returns detailed order item information for the order indicated by the specified order ID. If NextToken is provided, it&#39;s used to retrieve the next page of order items.  Note: When an order is in the Pending state (the order has been placed but payment has not been authorized), the getOrderItems operation does not return information about pricing, taxes, shipping charges, gift status or promotions for the order items in the order. After an order leaves the Pending state (this occurs when payment has been authorized) and enters the Unshipped, Partially Shipped, or Shipped state, the getOrderItems operation returns information about pricing, taxes, shipping charges, gift status and promotions for the order items in the order.  **Usage Plans:**  | Plan type | Rate (requests per second) | Burst | | ---- | ---- | ---- | |Default| 0.0055 | 20 | |Selling partner specific| Variable | Variable |  The x-amzn-RateLimit-Limit response header returns the usage plan rate limits that were applied to the requested operation. Rate limits for some selling partners will vary from the default rate and burst shown in the table above. For more information, see \&quot;Usage Plans and Rate Limits\&quot; in the Selling Partner API documentation.
      * @param orderId An Amazon-defined order identifier, in 3-7-7 format. (required)
      * @param nextToken A string token returned in the response of your previous request. (optional)
      * @return ApiResponse&lt;GetOrderItemsResponse&gt;
@@ -534,7 +534,7 @@ public class OrdersV0Api {
 
     /**
      *  (asynchronously)
-     * Returns detailed order item information for the order indicated by the specified order ID. If NextToken is provided, it&#39;s used to retrieve the next page of order items.  Note: When an order is in the Pending state (the order has been placed but payment has not been authorized), the getOrderItems operation does not return information about pricing, taxes, shipping charges, gift status or promotions for the order items in the order. After an order leaves the Pending state (this occurs when payment has been authorized) and enters the Unshipped, Partially Shipped, or Shipped state, the getOrderItems operation returns information about pricing, taxes, shipping charges, gift status and promotions for the order items in the order.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 1 | 1 |  For more information, see \&quot;Usage Plans and Rate Limits\&quot; in the Selling Partner API documentation.
+     * Returns detailed order item information for the order indicated by the specified order ID. If NextToken is provided, it&#39;s used to retrieve the next page of order items.  Note: When an order is in the Pending state (the order has been placed but payment has not been authorized), the getOrderItems operation does not return information about pricing, taxes, shipping charges, gift status or promotions for the order items in the order. After an order leaves the Pending state (this occurs when payment has been authorized) and enters the Unshipped, Partially Shipped, or Shipped state, the getOrderItems operation returns information about pricing, taxes, shipping charges, gift status and promotions for the order items in the order.  **Usage Plans:**  | Plan type | Rate (requests per second) | Burst | | ---- | ---- | ---- | |Default| 0.0055 | 20 | |Selling partner specific| Variable | Variable |  The x-amzn-RateLimit-Limit response header returns the usage plan rate limits that were applied to the requested operation. Rate limits for some selling partners will vary from the default rate and burst shown in the table above. For more information, see \&quot;Usage Plans and Rate Limits\&quot; in the Selling Partner API documentation.
      * @param orderId An Amazon-defined order identifier, in 3-7-7 format. (required)
      * @param nextToken A string token returned in the response of your previous request. (optional)
      * @param callback The callback to be executed when the API call finishes
@@ -636,7 +636,7 @@ public class OrdersV0Api {
 
     /**
      * 
-     * Returns buyer information in the order items of the order indicated by the specified order ID.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 1 | 1 |  For more information, see \&quot;Usage Plans and Rate Limits\&quot; in the Selling Partner API documentation.
+     * Returns buyer information for the order items in the specified order.  **Important.** We recommend using the getOrderItems operation to get buyer information for the order items in an order, as the getOrderItemsBuyerInfo operation is scheduled for deprecation on January 12, 2022. For more information, see the [Tokens API Use Case Guide](https://github.com/amzn/selling-partner-api-docs/blob/main/guides/en-US/use-case-guides/tokens-api-use-case-guide/tokens-API-use-case-guide-2021-03-01.md).  **Usage Plans:**  | Plan type | Rate (requests per second) | Burst | | ---- | ---- | ---- | |Default| 0.0055 | 20 | |Selling partner specific| Variable | Variable |  The x-amzn-RateLimit-Limit response header returns the usage plan rate limits that were applied to the requested operation. Rate limits for some selling partners will vary from the default rate and burst shown in the table above. For more information, see \&quot;Usage Plans and Rate Limits\&quot; in the Selling Partner API documentation.
      * @param orderId An Amazon-defined order identifier, in 3-7-7 format. (required)
      * @param nextToken A string token returned in the response of your previous request. (optional)
      * @return GetOrderItemsBuyerInfoResponse
@@ -649,7 +649,7 @@ public class OrdersV0Api {
 
     /**
      * 
-     * Returns buyer information in the order items of the order indicated by the specified order ID.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 1 | 1 |  For more information, see \&quot;Usage Plans and Rate Limits\&quot; in the Selling Partner API documentation.
+     * Returns buyer information for the order items in the specified order.  **Important.** We recommend using the getOrderItems operation to get buyer information for the order items in an order, as the getOrderItemsBuyerInfo operation is scheduled for deprecation on January 12, 2022. For more information, see the [Tokens API Use Case Guide](https://github.com/amzn/selling-partner-api-docs/blob/main/guides/en-US/use-case-guides/tokens-api-use-case-guide/tokens-API-use-case-guide-2021-03-01.md).  **Usage Plans:**  | Plan type | Rate (requests per second) | Burst | | ---- | ---- | ---- | |Default| 0.0055 | 20 | |Selling partner specific| Variable | Variable |  The x-amzn-RateLimit-Limit response header returns the usage plan rate limits that were applied to the requested operation. Rate limits for some selling partners will vary from the default rate and burst shown in the table above. For more information, see \&quot;Usage Plans and Rate Limits\&quot; in the Selling Partner API documentation.
      * @param orderId An Amazon-defined order identifier, in 3-7-7 format. (required)
      * @param nextToken A string token returned in the response of your previous request. (optional)
      * @return ApiResponse&lt;GetOrderItemsBuyerInfoResponse&gt;
@@ -663,7 +663,7 @@ public class OrdersV0Api {
 
     /**
      *  (asynchronously)
-     * Returns buyer information in the order items of the order indicated by the specified order ID.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 1 | 1 |  For more information, see \&quot;Usage Plans and Rate Limits\&quot; in the Selling Partner API documentation.
+     * Returns buyer information for the order items in the specified order.  **Important.** We recommend using the getOrderItems operation to get buyer information for the order items in an order, as the getOrderItemsBuyerInfo operation is scheduled for deprecation on January 12, 2022. For more information, see the [Tokens API Use Case Guide](https://github.com/amzn/selling-partner-api-docs/blob/main/guides/en-US/use-case-guides/tokens-api-use-case-guide/tokens-API-use-case-guide-2021-03-01.md).  **Usage Plans:**  | Plan type | Rate (requests per second) | Burst | | ---- | ---- | ---- | |Default| 0.0055 | 20 | |Selling partner specific| Variable | Variable |  The x-amzn-RateLimit-Limit response header returns the usage plan rate limits that were applied to the requested operation. Rate limits for some selling partners will vary from the default rate and burst shown in the table above. For more information, see \&quot;Usage Plans and Rate Limits\&quot; in the Selling Partner API documentation.
      * @param orderId An Amazon-defined order identifier, in 3-7-7 format. (required)
      * @param nextToken A string token returned in the response of your previous request. (optional)
      * @param callback The callback to be executed when the API call finishes
@@ -698,7 +698,7 @@ public class OrdersV0Api {
     }
     /**
      * Build call for getOrders
-     * @param marketplaceIds A list of MarketplaceId values. Used to select orders that were placed in the specified marketplaces. (required)
+     * @param marketplaceIds A list of MarketplaceId values. Used to select orders that were placed in the specified marketplaces.  See the [Selling Partner API Developer Guide](https://github.com/amzn/selling-partner-api-docs/blob/main/guides/en-US/developer-guide/SellingPartnerApiDeveloperGuide.md#marketplaceid-values) for a complete list of marketplaceId values. (required)
      * @param createdAfter A date used for selecting orders created after (or at) a specified time. Only orders placed after the specified time are returned. Either the CreatedAfter parameter or the LastUpdatedAfter parameter is required. Both cannot be empty. The date must be in ISO 8601 format. (optional)
      * @param createdBefore A date used for selecting orders created before (or at) a specified time. Only orders placed before the specified time are returned. The date must be in ISO 8601 format. (optional)
      * @param lastUpdatedAfter A date used for selecting orders that were last updated after (or at) a specified time. An update is defined as any change in order status, including the creation of a new order. Includes updates made by Amazon and by the seller. The date must be in ISO 8601 format. (optional)
@@ -712,12 +712,15 @@ public class OrdersV0Api {
      * @param easyShipShipmentStatuses A list of EasyShipShipmentStatus values. Used to select Easy Ship orders with statuses that match the specified  values. If EasyShipShipmentStatus is specified, only Amazon Easy Ship orders are returned.Possible values: PendingPickUp (Amazon has not yet picked up the package from the seller). LabelCanceled (The seller canceled the pickup). PickedUp (Amazon has picked up the package from the seller). AtOriginFC (The packaged is at the origin fulfillment center). AtDestinationFC (The package is at the destination fulfillment center). OutForDelivery (The package is out for delivery). Damaged (The package was damaged by the carrier). Delivered (The package has been delivered to the buyer). RejectedByBuyer (The package has been rejected by the buyer). Undeliverable (The package cannot be delivered). ReturnedToSeller (The package was not delivered to the buyer and was returned to the seller). ReturningToSeller (The package was not delivered to the buyer and is being returned to the seller). (optional)
      * @param nextToken A string token returned in the response of your previous request. (optional)
      * @param amazonOrderIds A list of AmazonOrderId values. An AmazonOrderId is an Amazon-defined order identifier, in 3-7-7 format. (optional)
+     * @param actualFulfillmentSupplySourceId Denotes the recommended sourceId where the order should be fulfilled from. (optional)
+     * @param isISPU When true, this order is marked to be picked up from a store rather than delivered. (optional)
+     * @param storeChainStoreId The store chain store identifier. Linked to a specific store in a store chain. (optional)
      * @param progressListener Progress listener
      * @param progressRequestListener Progress request listener
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
-    public okhttp3.Call getOrdersCall(List<String> marketplaceIds, String createdAfter, String createdBefore, String lastUpdatedAfter, String lastUpdatedBefore, List<String> orderStatuses, List<String> fulfillmentChannels, List<String> paymentMethods, String buyerEmail, String sellerOrderId, Integer maxResultsPerPage, List<String> easyShipShipmentStatuses, String nextToken, List<String> amazonOrderIds, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    public okhttp3.Call getOrdersCall(List<String> marketplaceIds, String createdAfter, String createdBefore, String lastUpdatedAfter, String lastUpdatedBefore, List<String> orderStatuses, List<String> fulfillmentChannels, List<String> paymentMethods, String buyerEmail, String sellerOrderId, Integer maxResultsPerPage, List<String> easyShipShipmentStatuses, String nextToken, List<String> amazonOrderIds, String actualFulfillmentSupplySourceId, Boolean isISPU, String storeChainStoreId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         Object localVarPostBody = null;
 
         // create path and map variables
@@ -753,6 +756,12 @@ public class OrdersV0Api {
         localVarQueryParams.addAll(apiClient.parameterToPair("NextToken", nextToken));
         if (amazonOrderIds != null)
         localVarCollectionQueryParams.addAll(apiClient.parameterToPairs("csv", "AmazonOrderIds", amazonOrderIds));
+        if (actualFulfillmentSupplySourceId != null)
+        localVarQueryParams.addAll(apiClient.parameterToPair("ActualFulfillmentSupplySourceId", actualFulfillmentSupplySourceId));
+        if (isISPU != null)
+        localVarQueryParams.addAll(apiClient.parameterToPair("IsISPU", isISPU));
+        if (storeChainStoreId != null)
+        localVarQueryParams.addAll(apiClient.parameterToPair("StoreChainStoreId", storeChainStoreId));
 
         Map<String, String> localVarHeaderParams = new HashMap<String, String>();
 
@@ -787,7 +796,7 @@ public class OrdersV0Api {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call getOrdersValidateBeforeCall(List<String> marketplaceIds, String createdAfter, String createdBefore, String lastUpdatedAfter, String lastUpdatedBefore, List<String> orderStatuses, List<String> fulfillmentChannels, List<String> paymentMethods, String buyerEmail, String sellerOrderId, Integer maxResultsPerPage, List<String> easyShipShipmentStatuses, String nextToken, List<String> amazonOrderIds, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    private okhttp3.Call getOrdersValidateBeforeCall(List<String> marketplaceIds, String createdAfter, String createdBefore, String lastUpdatedAfter, String lastUpdatedBefore, List<String> orderStatuses, List<String> fulfillmentChannels, List<String> paymentMethods, String buyerEmail, String sellerOrderId, Integer maxResultsPerPage, List<String> easyShipShipmentStatuses, String nextToken, List<String> amazonOrderIds, String actualFulfillmentSupplySourceId, Boolean isISPU, String storeChainStoreId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         
         // verify the required parameter 'marketplaceIds' is set
         if (marketplaceIds == null) {
@@ -795,15 +804,15 @@ public class OrdersV0Api {
         }
         
 
-        okhttp3.Call call = getOrdersCall(marketplaceIds, createdAfter, createdBefore, lastUpdatedAfter, lastUpdatedBefore, orderStatuses, fulfillmentChannels, paymentMethods, buyerEmail, sellerOrderId, maxResultsPerPage, easyShipShipmentStatuses, nextToken, amazonOrderIds, progressListener, progressRequestListener);
+        okhttp3.Call call = getOrdersCall(marketplaceIds, createdAfter, createdBefore, lastUpdatedAfter, lastUpdatedBefore, orderStatuses, fulfillmentChannels, paymentMethods, buyerEmail, sellerOrderId, maxResultsPerPage, easyShipShipmentStatuses, nextToken, amazonOrderIds, actualFulfillmentSupplySourceId, isISPU, storeChainStoreId, progressListener, progressRequestListener);
         return call;
 
     }
 
     /**
      * 
-     * Returns orders created or updated during the time frame indicated by the specified parameters. You can also apply a range of filtering criteria to narrow the list of orders returned. If NextToken is present, that will be used to retrieve the orders instead of other criteria.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 1 | 1 |  For more information, see \&quot;Usage Plans and Rate Limits\&quot; in the Selling Partner API documentation.
-     * @param marketplaceIds A list of MarketplaceId values. Used to select orders that were placed in the specified marketplaces. (required)
+     * Returns orders created or updated during the time frame indicated by the specified parameters. You can also apply a range of filtering criteria to narrow the list of orders returned. If NextToken is present, that will be used to retrieve the orders instead of other criteria.  **Usage Plans:**  | Plan type | Rate (requests per second) | Burst | | ---- | ---- | ---- | |Default| 0.0055 | 20 | |Selling partner specific| Variable | Variable |  The x-amzn-RateLimit-Limit response header returns the usage plan rate limits that were applied to the requested operation. Rate limits for some selling partners will vary from the default rate and burst shown in the table above. For more information, see \&quot;Usage Plans and Rate Limits\&quot; in the Selling Partner API documentation.
+     * @param marketplaceIds A list of MarketplaceId values. Used to select orders that were placed in the specified marketplaces.  See the [Selling Partner API Developer Guide](https://github.com/amzn/selling-partner-api-docs/blob/main/guides/en-US/developer-guide/SellingPartnerApiDeveloperGuide.md#marketplaceid-values) for a complete list of marketplaceId values. (required)
      * @param createdAfter A date used for selecting orders created after (or at) a specified time. Only orders placed after the specified time are returned. Either the CreatedAfter parameter or the LastUpdatedAfter parameter is required. Both cannot be empty. The date must be in ISO 8601 format. (optional)
      * @param createdBefore A date used for selecting orders created before (or at) a specified time. Only orders placed before the specified time are returned. The date must be in ISO 8601 format. (optional)
      * @param lastUpdatedAfter A date used for selecting orders that were last updated after (or at) a specified time. An update is defined as any change in order status, including the creation of a new order. Includes updates made by Amazon and by the seller. The date must be in ISO 8601 format. (optional)
@@ -817,18 +826,21 @@ public class OrdersV0Api {
      * @param easyShipShipmentStatuses A list of EasyShipShipmentStatus values. Used to select Easy Ship orders with statuses that match the specified  values. If EasyShipShipmentStatus is specified, only Amazon Easy Ship orders are returned.Possible values: PendingPickUp (Amazon has not yet picked up the package from the seller). LabelCanceled (The seller canceled the pickup). PickedUp (Amazon has picked up the package from the seller). AtOriginFC (The packaged is at the origin fulfillment center). AtDestinationFC (The package is at the destination fulfillment center). OutForDelivery (The package is out for delivery). Damaged (The package was damaged by the carrier). Delivered (The package has been delivered to the buyer). RejectedByBuyer (The package has been rejected by the buyer). Undeliverable (The package cannot be delivered). ReturnedToSeller (The package was not delivered to the buyer and was returned to the seller). ReturningToSeller (The package was not delivered to the buyer and is being returned to the seller). (optional)
      * @param nextToken A string token returned in the response of your previous request. (optional)
      * @param amazonOrderIds A list of AmazonOrderId values. An AmazonOrderId is an Amazon-defined order identifier, in 3-7-7 format. (optional)
+     * @param actualFulfillmentSupplySourceId Denotes the recommended sourceId where the order should be fulfilled from. (optional)
+     * @param isISPU When true, this order is marked to be picked up from a store rather than delivered. (optional)
+     * @param storeChainStoreId The store chain store identifier. Linked to a specific store in a store chain. (optional)
      * @return GetOrdersResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public GetOrdersResponse getOrders(List<String> marketplaceIds, String createdAfter, String createdBefore, String lastUpdatedAfter, String lastUpdatedBefore, List<String> orderStatuses, List<String> fulfillmentChannels, List<String> paymentMethods, String buyerEmail, String sellerOrderId, Integer maxResultsPerPage, List<String> easyShipShipmentStatuses, String nextToken, List<String> amazonOrderIds) throws ApiException {
-        ApiResponse<GetOrdersResponse> resp = getOrdersWithHttpInfo(marketplaceIds, createdAfter, createdBefore, lastUpdatedAfter, lastUpdatedBefore, orderStatuses, fulfillmentChannels, paymentMethods, buyerEmail, sellerOrderId, maxResultsPerPage, easyShipShipmentStatuses, nextToken, amazonOrderIds);
+    public GetOrdersResponse getOrders(List<String> marketplaceIds, String createdAfter, String createdBefore, String lastUpdatedAfter, String lastUpdatedBefore, List<String> orderStatuses, List<String> fulfillmentChannels, List<String> paymentMethods, String buyerEmail, String sellerOrderId, Integer maxResultsPerPage, List<String> easyShipShipmentStatuses, String nextToken, List<String> amazonOrderIds, String actualFulfillmentSupplySourceId, Boolean isISPU, String storeChainStoreId) throws ApiException {
+        ApiResponse<GetOrdersResponse> resp = getOrdersWithHttpInfo(marketplaceIds, createdAfter, createdBefore, lastUpdatedAfter, lastUpdatedBefore, orderStatuses, fulfillmentChannels, paymentMethods, buyerEmail, sellerOrderId, maxResultsPerPage, easyShipShipmentStatuses, nextToken, amazonOrderIds, actualFulfillmentSupplySourceId, isISPU, storeChainStoreId);
         return resp.getData();
     }
 
     /**
      * 
-     * Returns orders created or updated during the time frame indicated by the specified parameters. You can also apply a range of filtering criteria to narrow the list of orders returned. If NextToken is present, that will be used to retrieve the orders instead of other criteria.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 1 | 1 |  For more information, see \&quot;Usage Plans and Rate Limits\&quot; in the Selling Partner API documentation.
-     * @param marketplaceIds A list of MarketplaceId values. Used to select orders that were placed in the specified marketplaces. (required)
+     * Returns orders created or updated during the time frame indicated by the specified parameters. You can also apply a range of filtering criteria to narrow the list of orders returned. If NextToken is present, that will be used to retrieve the orders instead of other criteria.  **Usage Plans:**  | Plan type | Rate (requests per second) | Burst | | ---- | ---- | ---- | |Default| 0.0055 | 20 | |Selling partner specific| Variable | Variable |  The x-amzn-RateLimit-Limit response header returns the usage plan rate limits that were applied to the requested operation. Rate limits for some selling partners will vary from the default rate and burst shown in the table above. For more information, see \&quot;Usage Plans and Rate Limits\&quot; in the Selling Partner API documentation.
+     * @param marketplaceIds A list of MarketplaceId values. Used to select orders that were placed in the specified marketplaces.  See the [Selling Partner API Developer Guide](https://github.com/amzn/selling-partner-api-docs/blob/main/guides/en-US/developer-guide/SellingPartnerApiDeveloperGuide.md#marketplaceid-values) for a complete list of marketplaceId values. (required)
      * @param createdAfter A date used for selecting orders created after (or at) a specified time. Only orders placed after the specified time are returned. Either the CreatedAfter parameter or the LastUpdatedAfter parameter is required. Both cannot be empty. The date must be in ISO 8601 format. (optional)
      * @param createdBefore A date used for selecting orders created before (or at) a specified time. Only orders placed before the specified time are returned. The date must be in ISO 8601 format. (optional)
      * @param lastUpdatedAfter A date used for selecting orders that were last updated after (or at) a specified time. An update is defined as any change in order status, including the creation of a new order. Includes updates made by Amazon and by the seller. The date must be in ISO 8601 format. (optional)
@@ -842,19 +854,22 @@ public class OrdersV0Api {
      * @param easyShipShipmentStatuses A list of EasyShipShipmentStatus values. Used to select Easy Ship orders with statuses that match the specified  values. If EasyShipShipmentStatus is specified, only Amazon Easy Ship orders are returned.Possible values: PendingPickUp (Amazon has not yet picked up the package from the seller). LabelCanceled (The seller canceled the pickup). PickedUp (Amazon has picked up the package from the seller). AtOriginFC (The packaged is at the origin fulfillment center). AtDestinationFC (The package is at the destination fulfillment center). OutForDelivery (The package is out for delivery). Damaged (The package was damaged by the carrier). Delivered (The package has been delivered to the buyer). RejectedByBuyer (The package has been rejected by the buyer). Undeliverable (The package cannot be delivered). ReturnedToSeller (The package was not delivered to the buyer and was returned to the seller). ReturningToSeller (The package was not delivered to the buyer and is being returned to the seller). (optional)
      * @param nextToken A string token returned in the response of your previous request. (optional)
      * @param amazonOrderIds A list of AmazonOrderId values. An AmazonOrderId is an Amazon-defined order identifier, in 3-7-7 format. (optional)
+     * @param actualFulfillmentSupplySourceId Denotes the recommended sourceId where the order should be fulfilled from. (optional)
+     * @param isISPU When true, this order is marked to be picked up from a store rather than delivered. (optional)
+     * @param storeChainStoreId The store chain store identifier. Linked to a specific store in a store chain. (optional)
      * @return ApiResponse&lt;GetOrdersResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<GetOrdersResponse> getOrdersWithHttpInfo(List<String> marketplaceIds, String createdAfter, String createdBefore, String lastUpdatedAfter, String lastUpdatedBefore, List<String> orderStatuses, List<String> fulfillmentChannels, List<String> paymentMethods, String buyerEmail, String sellerOrderId, Integer maxResultsPerPage, List<String> easyShipShipmentStatuses, String nextToken, List<String> amazonOrderIds) throws ApiException {
-        okhttp3.Call call = getOrdersValidateBeforeCall(marketplaceIds, createdAfter, createdBefore, lastUpdatedAfter, lastUpdatedBefore, orderStatuses, fulfillmentChannels, paymentMethods, buyerEmail, sellerOrderId, maxResultsPerPage, easyShipShipmentStatuses, nextToken, amazonOrderIds, null, null);
+    public ApiResponse<GetOrdersResponse> getOrdersWithHttpInfo(List<String> marketplaceIds, String createdAfter, String createdBefore, String lastUpdatedAfter, String lastUpdatedBefore, List<String> orderStatuses, List<String> fulfillmentChannels, List<String> paymentMethods, String buyerEmail, String sellerOrderId, Integer maxResultsPerPage, List<String> easyShipShipmentStatuses, String nextToken, List<String> amazonOrderIds, String actualFulfillmentSupplySourceId, Boolean isISPU, String storeChainStoreId) throws ApiException {
+        okhttp3.Call call = getOrdersValidateBeforeCall(marketplaceIds, createdAfter, createdBefore, lastUpdatedAfter, lastUpdatedBefore, orderStatuses, fulfillmentChannels, paymentMethods, buyerEmail, sellerOrderId, maxResultsPerPage, easyShipShipmentStatuses, nextToken, amazonOrderIds, actualFulfillmentSupplySourceId, isISPU, storeChainStoreId, null, null);
         Type localVarReturnType = new TypeToken<GetOrdersResponse>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
 
     /**
      *  (asynchronously)
-     * Returns orders created or updated during the time frame indicated by the specified parameters. You can also apply a range of filtering criteria to narrow the list of orders returned. If NextToken is present, that will be used to retrieve the orders instead of other criteria.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 1 | 1 |  For more information, see \&quot;Usage Plans and Rate Limits\&quot; in the Selling Partner API documentation.
-     * @param marketplaceIds A list of MarketplaceId values. Used to select orders that were placed in the specified marketplaces. (required)
+     * Returns orders created or updated during the time frame indicated by the specified parameters. You can also apply a range of filtering criteria to narrow the list of orders returned. If NextToken is present, that will be used to retrieve the orders instead of other criteria.  **Usage Plans:**  | Plan type | Rate (requests per second) | Burst | | ---- | ---- | ---- | |Default| 0.0055 | 20 | |Selling partner specific| Variable | Variable |  The x-amzn-RateLimit-Limit response header returns the usage plan rate limits that were applied to the requested operation. Rate limits for some selling partners will vary from the default rate and burst shown in the table above. For more information, see \&quot;Usage Plans and Rate Limits\&quot; in the Selling Partner API documentation.
+     * @param marketplaceIds A list of MarketplaceId values. Used to select orders that were placed in the specified marketplaces.  See the [Selling Partner API Developer Guide](https://github.com/amzn/selling-partner-api-docs/blob/main/guides/en-US/developer-guide/SellingPartnerApiDeveloperGuide.md#marketplaceid-values) for a complete list of marketplaceId values. (required)
      * @param createdAfter A date used for selecting orders created after (or at) a specified time. Only orders placed after the specified time are returned. Either the CreatedAfter parameter or the LastUpdatedAfter parameter is required. Both cannot be empty. The date must be in ISO 8601 format. (optional)
      * @param createdBefore A date used for selecting orders created before (or at) a specified time. Only orders placed before the specified time are returned. The date must be in ISO 8601 format. (optional)
      * @param lastUpdatedAfter A date used for selecting orders that were last updated after (or at) a specified time. An update is defined as any change in order status, including the creation of a new order. Includes updates made by Amazon and by the seller. The date must be in ISO 8601 format. (optional)
@@ -868,11 +883,14 @@ public class OrdersV0Api {
      * @param easyShipShipmentStatuses A list of EasyShipShipmentStatus values. Used to select Easy Ship orders with statuses that match the specified  values. If EasyShipShipmentStatus is specified, only Amazon Easy Ship orders are returned.Possible values: PendingPickUp (Amazon has not yet picked up the package from the seller). LabelCanceled (The seller canceled the pickup). PickedUp (Amazon has picked up the package from the seller). AtOriginFC (The packaged is at the origin fulfillment center). AtDestinationFC (The package is at the destination fulfillment center). OutForDelivery (The package is out for delivery). Damaged (The package was damaged by the carrier). Delivered (The package has been delivered to the buyer). RejectedByBuyer (The package has been rejected by the buyer). Undeliverable (The package cannot be delivered). ReturnedToSeller (The package was not delivered to the buyer and was returned to the seller). ReturningToSeller (The package was not delivered to the buyer and is being returned to the seller). (optional)
      * @param nextToken A string token returned in the response of your previous request. (optional)
      * @param amazonOrderIds A list of AmazonOrderId values. An AmazonOrderId is an Amazon-defined order identifier, in 3-7-7 format. (optional)
+     * @param actualFulfillmentSupplySourceId Denotes the recommended sourceId where the order should be fulfilled from. (optional)
+     * @param isISPU When true, this order is marked to be picked up from a store rather than delivered. (optional)
+     * @param storeChainStoreId The store chain store identifier. Linked to a specific store in a store chain. (optional)
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public okhttp3.Call getOrdersAsync(List<String> marketplaceIds, String createdAfter, String createdBefore, String lastUpdatedAfter, String lastUpdatedBefore, List<String> orderStatuses, List<String> fulfillmentChannels, List<String> paymentMethods, String buyerEmail, String sellerOrderId, Integer maxResultsPerPage, List<String> easyShipShipmentStatuses, String nextToken, List<String> amazonOrderIds, final ApiCallback<GetOrdersResponse> callback) throws ApiException {
+    public okhttp3.Call getOrdersAsync(List<String> marketplaceIds, String createdAfter, String createdBefore, String lastUpdatedAfter, String lastUpdatedBefore, List<String> orderStatuses, List<String> fulfillmentChannels, List<String> paymentMethods, String buyerEmail, String sellerOrderId, Integer maxResultsPerPage, List<String> easyShipShipmentStatuses, String nextToken, List<String> amazonOrderIds, String actualFulfillmentSupplySourceId, Boolean isISPU, String storeChainStoreId, final ApiCallback<GetOrdersResponse> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -893,7 +911,7 @@ public class OrdersV0Api {
             };
         }
 
-        okhttp3.Call call = getOrdersValidateBeforeCall(marketplaceIds, createdAfter, createdBefore, lastUpdatedAfter, lastUpdatedBefore, orderStatuses, fulfillmentChannels, paymentMethods, buyerEmail, sellerOrderId, maxResultsPerPage, easyShipShipmentStatuses, nextToken, amazonOrderIds, progressListener, progressRequestListener);
+        okhttp3.Call call = getOrdersValidateBeforeCall(marketplaceIds, createdAfter, createdBefore, lastUpdatedAfter, lastUpdatedBefore, orderStatuses, fulfillmentChannels, paymentMethods, buyerEmail, sellerOrderId, maxResultsPerPage, easyShipShipmentStatuses, nextToken, amazonOrderIds, actualFulfillmentSupplySourceId, isISPU, storeChainStoreId, progressListener, progressRequestListener);
         Type localVarReturnType = new TypeToken<GetOrdersResponse>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;

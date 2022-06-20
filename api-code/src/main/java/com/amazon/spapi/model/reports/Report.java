@@ -28,8 +28,9 @@ import java.util.List;
 import org.threeten.bp.OffsetDateTime;
 
 /**
- * Report
+ * Detailed information about the report.
  */
+@ApiModel(description = "Detailed information about the report.")
 
 public class Report {
   @SerializedName("marketplaceIds")

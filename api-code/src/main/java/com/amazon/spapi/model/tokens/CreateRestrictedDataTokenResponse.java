@@ -1,6 +1,6 @@
 /*
  * Selling Partner API for Tokens 
- * The Selling Partner API for Tokens provides a secure way to access a customers's PII (Personally Identifiable Information). You can call the Tokens API to get a Restricted Data Token (RDT) for one or more restricted resources that you specify. The RDT authorizes you to make subsequent requests to access these restricted resources.
+ * The Selling Partner API for Tokens provides a secure way to access a customer's PII (Personally Identifiable Information). You can call the Tokens API to get a Restricted Data Token (RDT) for one or more restricted resources that you specify. The RDT authorizes subsequent calls to restricted operations that correspond to the restricted resources that you specified.  For more information, see the [Tokens API Use Case Guide](https://github.com/amzn/selling-partner-api-docs/blob/main/guides/en-US/use-case-guides/tokens-api-use-case-guide/tokens-API-use-case-guide-2021-03-01.md).
  *
  * OpenAPI spec version: 2021-03-01
  * 
@@ -42,10 +42,10 @@ public class CreateRestrictedDataTokenResponse {
   }
 
    /**
-   * A Restricted Data Token (RDT). This is a short-lived access token that authorizes you to access the restricted resources that you specified. Pass this value with the x-amzn-access-token header when making subsequent calls to these restricted resources.
+   * A Restricted Data Token (RDT). This is a short-lived access token that authorizes calls to restricted operations. Pass this value with the x-amz-access-token header when making subsequent calls to these restricted resources.
    * @return restrictedDataToken
   **/
-  @ApiModelProperty(value = "A Restricted Data Token (RDT). This is a short-lived access token that authorizes you to access the restricted resources that you specified. Pass this value with the x-amzn-access-token header when making subsequent calls to these restricted resources.")
+  @ApiModelProperty(value = "A Restricted Data Token (RDT). This is a short-lived access token that authorizes calls to restricted operations. Pass this value with the x-amz-access-token header when making subsequent calls to these restricted resources.")
   public String getRestrictedDataToken() {
     return restrictedDataToken;
   }

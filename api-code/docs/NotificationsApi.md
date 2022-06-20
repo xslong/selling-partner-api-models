@@ -76,7 +76,7 @@ Creates a subscription for the specified notification type to be delivered to th
 
 NotificationsApi apiInstance = new NotificationsApi();
 CreateSubscriptionRequest body = new CreateSubscriptionRequest(); // CreateSubscriptionRequest | 
-String notificationType = "notificationType_example"; // String | The type of notification to which you want to subscribe.   For more information about notification types, see the Notifications API Use Case Guide.
+String notificationType = "notificationType_example"; // String | The type of notification.   For more information about notification types, see [the Notifications API Use Case Guide](https://github.com/amzn/selling-partner-api-docs/blob/main/guides/en-US/use-case-guides/notifications-api-use-case-guide/notifications-use-case-guide-v1.md).
 try {
     CreateSubscriptionResponse result = apiInstance.createSubscription(body, notificationType);
     System.out.println(result);
@@ -91,7 +91,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **body** | [**CreateSubscriptionRequest**](CreateSubscriptionRequest.md)|  |
- **notificationType** | **String**| The type of notification to which you want to subscribe.   For more information about notification types, see the Notifications API Use Case Guide. | [enum: ANY_OFFER_CHANGED, FEED_PROCESSING_FINISHED, FBA_OUTBOUND_SHIPMENT_STATUS, FEE_PROMOTION, FULFILLMENT_ORDER_STATUS, REPORT_PROCESSING_FINISHED, BRANDED_ITEM_CONTENT_CHANGE, ITEM_PRODUCT_TYPE_CHANGE, MFN_ORDER_STATUS_CHANGE, B2B_ANY_OFFER_CHANGED]
+ **notificationType** | **String**| The type of notification.   For more information about notification types, see [the Notifications API Use Case Guide](https://github.com/amzn/selling-partner-api-docs/blob/main/guides/en-US/use-case-guides/notifications-api-use-case-guide/notifications-use-case-guide-v1.md). | [enum: ANY_OFFER_CHANGED, FEED_PROCESSING_FINISHED, FBA_OUTBOUND_SHIPMENT_STATUS, FEE_PROMOTION, FULFILLMENT_ORDER_STATUS, REPORT_PROCESSING_FINISHED, BRANDED_ITEM_CONTENT_CHANGE, ITEM_PRODUCT_TYPE_CHANGE, LISTINGS_ITEM_STATUS_CHANGE, LISTINGS_ITEM_ISSUES_CHANGE, MFN_ORDER_STATUS_CHANGE, B2B_ANY_OFFER_CHANGED, ACCOUNT_STATUS_CHANGED, PRODUCT_TYPE_DEFINITIONS_CHANGE]
 
 ### Return type
 
@@ -168,7 +168,7 @@ Deletes the subscription indicated by the subscription identifier and notificati
 
 NotificationsApi apiInstance = new NotificationsApi();
 String subscriptionId = "subscriptionId_example"; // String | The identifier for the subscription that you want to delete.
-String notificationType = "notificationType_example"; // String | The type of notification to which you want to subscribe.   For more information about notification types, see the Notifications API Use Case Guide.
+String notificationType = "notificationType_example"; // String | The type of notification.   For more information about notification types, see [the Notifications API Use Case Guide](https://github.com/amzn/selling-partner-api-docs/blob/main/guides/en-US/use-case-guides/notifications-api-use-case-guide/notifications-use-case-guide-v1.md).
 try {
     DeleteSubscriptionByIdResponse result = apiInstance.deleteSubscriptionById(subscriptionId, notificationType);
     System.out.println(result);
@@ -183,7 +183,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **subscriptionId** | **String**| The identifier for the subscription that you want to delete. |
- **notificationType** | **String**| The type of notification to which you want to subscribe.   For more information about notification types, see the Notifications API Use Case Guide. | [enum: ANY_OFFER_CHANGED, FEED_PROCESSING_FINISHED, FBA_OUTBOUND_SHIPMENT_STATUS, FEE_PROMOTION, FULFILLMENT_ORDER_STATUS, REPORT_PROCESSING_FINISHED, BRANDED_ITEM_CONTENT_CHANGE, ITEM_PRODUCT_TYPE_CHANGE, MFN_ORDER_STATUS_CHANGE, B2B_ANY_OFFER_CHANGED]
+ **notificationType** | **String**| The type of notification.   For more information about notification types, see [the Notifications API Use Case Guide](https://github.com/amzn/selling-partner-api-docs/blob/main/guides/en-US/use-case-guides/notifications-api-use-case-guide/notifications-use-case-guide-v1.md). | [enum: ANY_OFFER_CHANGED, FEED_PROCESSING_FINISHED, FBA_OUTBOUND_SHIPMENT_STATUS, FEE_PROMOTION, FULFILLMENT_ORDER_STATUS, REPORT_PROCESSING_FINISHED, BRANDED_ITEM_CONTENT_CHANGE, ITEM_PRODUCT_TYPE_CHANGE, LISTINGS_ITEM_STATUS_CHANGE, LISTINGS_ITEM_ISSUES_CHANGE, MFN_ORDER_STATUS_CHANGE, B2B_ANY_OFFER_CHANGED, ACCOUNT_STATUS_CHANGED, PRODUCT_TYPE_DEFINITIONS_CHANGE]
 
 ### Return type
 
@@ -300,7 +300,7 @@ Returns information about subscriptions of the specified notification type. You 
 
 
 NotificationsApi apiInstance = new NotificationsApi();
-String notificationType = "notificationType_example"; // String | The type of notification to which you want to subscribe.   For more information about notification types, see the Notifications API Use Case Guide.
+String notificationType = "notificationType_example"; // String | The type of notification.   For more information about notification types, see [the Notifications API Use Case Guide](https://github.com/amzn/selling-partner-api-docs/blob/main/guides/en-US/use-case-guides/notifications-api-use-case-guide/notifications-use-case-guide-v1.md).
 try {
     GetSubscriptionResponse result = apiInstance.getSubscription(notificationType);
     System.out.println(result);
@@ -314,7 +314,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **notificationType** | **String**| The type of notification to which you want to subscribe.   For more information about notification types, see the Notifications API Use Case Guide. | [enum: ANY_OFFER_CHANGED, FEED_PROCESSING_FINISHED, FBA_OUTBOUND_SHIPMENT_STATUS, FEE_PROMOTION, FULFILLMENT_ORDER_STATUS, REPORT_PROCESSING_FINISHED, BRANDED_ITEM_CONTENT_CHANGE, ITEM_PRODUCT_TYPE_CHANGE, MFN_ORDER_STATUS_CHANGE, B2B_ANY_OFFER_CHANGED]
+ **notificationType** | **String**| The type of notification.   For more information about notification types, see [the Notifications API Use Case Guide](https://github.com/amzn/selling-partner-api-docs/blob/main/guides/en-US/use-case-guides/notifications-api-use-case-guide/notifications-use-case-guide-v1.md). | [enum: ANY_OFFER_CHANGED, FEED_PROCESSING_FINISHED, FBA_OUTBOUND_SHIPMENT_STATUS, FEE_PROMOTION, FULFILLMENT_ORDER_STATUS, REPORT_PROCESSING_FINISHED, BRANDED_ITEM_CONTENT_CHANGE, ITEM_PRODUCT_TYPE_CHANGE, LISTINGS_ITEM_STATUS_CHANGE, LISTINGS_ITEM_ISSUES_CHANGE, MFN_ORDER_STATUS_CHANGE, B2B_ANY_OFFER_CHANGED, ACCOUNT_STATUS_CHANGED, PRODUCT_TYPE_DEFINITIONS_CHANGE]
 
 ### Return type
 
@@ -346,7 +346,7 @@ Returns information about a subscription for the specified notification type. Th
 
 NotificationsApi apiInstance = new NotificationsApi();
 String subscriptionId = "subscriptionId_example"; // String | The identifier for the subscription that you want to get.
-String notificationType = "notificationType_example"; // String | The type of notification to which you want to subscribe.   For more information about notification types, see the Notifications API Use Case Guide.
+String notificationType = "notificationType_example"; // String | The type of notification.   For more information about notification types, see [the Notifications API Use Case Guide](https://github.com/amzn/selling-partner-api-docs/blob/main/guides/en-US/use-case-guides/notifications-api-use-case-guide/notifications-use-case-guide-v1.md).
 try {
     GetSubscriptionByIdResponse result = apiInstance.getSubscriptionById(subscriptionId, notificationType);
     System.out.println(result);
@@ -361,7 +361,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **subscriptionId** | **String**| The identifier for the subscription that you want to get. |
- **notificationType** | **String**| The type of notification to which you want to subscribe.   For more information about notification types, see the Notifications API Use Case Guide. | [enum: ANY_OFFER_CHANGED, FEED_PROCESSING_FINISHED, FBA_OUTBOUND_SHIPMENT_STATUS, FEE_PROMOTION, FULFILLMENT_ORDER_STATUS, REPORT_PROCESSING_FINISHED, BRANDED_ITEM_CONTENT_CHANGE, ITEM_PRODUCT_TYPE_CHANGE, MFN_ORDER_STATUS_CHANGE, B2B_ANY_OFFER_CHANGED]
+ **notificationType** | **String**| The type of notification.   For more information about notification types, see [the Notifications API Use Case Guide](https://github.com/amzn/selling-partner-api-docs/blob/main/guides/en-US/use-case-guides/notifications-api-use-case-guide/notifications-use-case-guide-v1.md). | [enum: ANY_OFFER_CHANGED, FEED_PROCESSING_FINISHED, FBA_OUTBOUND_SHIPMENT_STATUS, FEE_PROMOTION, FULFILLMENT_ORDER_STATUS, REPORT_PROCESSING_FINISHED, BRANDED_ITEM_CONTENT_CHANGE, ITEM_PRODUCT_TYPE_CHANGE, LISTINGS_ITEM_STATUS_CHANGE, LISTINGS_ITEM_ISSUES_CHANGE, MFN_ORDER_STATUS_CHANGE, B2B_ANY_OFFER_CHANGED, ACCOUNT_STATUS_CHANGED, PRODUCT_TYPE_DEFINITIONS_CHANGE]
 
 ### Return type
 

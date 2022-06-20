@@ -25,7 +25,7 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 
 /**
- * An optional enrollment program for which to return the estimated fees when the offer is fulfilled by Amazon (IsAmazonFulfilled is set to true).
+ * An optional enrollment program to return the estimated fees when the offer is fulfilled by Amazon (IsAmazonFulfilled is set to true).
  */
 @JsonAdapter(OptionalFulfillmentProgram.Adapter.class)
 public enum OptionalFulfillmentProgram {

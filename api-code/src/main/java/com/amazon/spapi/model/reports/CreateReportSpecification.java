@@ -29,8 +29,9 @@ import java.util.List;
 import org.threeten.bp.OffsetDateTime;
 
 /**
- * CreateReportSpecification
+ * Information required to create the report.
  */
+@ApiModel(description = "Information required to create the report.")
 
 public class CreateReportSpecification {
   @SerializedName("reportOptions")

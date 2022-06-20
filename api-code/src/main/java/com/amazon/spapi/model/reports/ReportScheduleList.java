@@ -28,8 +28,9 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * ReportScheduleList
+ * A list of report schedules.
  */
+@ApiModel(description = "A list of report schedules.")
 
 public class ReportScheduleList {
   @SerializedName("reportSchedules")

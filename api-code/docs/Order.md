@@ -38,7 +38,15 @@ Name | Type | Description | Notes
 **isEstimatedShipDateSet** | **Boolean** | When true, the estimated ship date is set for the order. Returned only for Sourcing on Demand orders. |  [optional]
 **isSoldByAB** | **Boolean** | When true, the item within this order was bought and re-sold by Amazon Business EU SARL (ABEU). By buying and instantly re-selling your items, ABEU becomes the seller of record, making your inventory available for sale to customers who would not otherwise purchase from a third-party seller. |  [optional]
 **defaultShipFromLocationAddress** | [**Address**](Address.md) | The recommended location for the seller to ship the items from. It is calculated at checkout. The seller may or may not choose to ship from this location. |  [optional]
+**buyerInvoicePreference** | [**BuyerInvoicePreferenceEnum**](#BuyerInvoicePreferenceEnum) | The buyer’s invoicing preference. |  [optional]
+**buyerTaxInformation** | [**BuyerTaxInformation**](BuyerTaxInformation.md) | Contains the business invoice tax information. |  [optional]
 **fulfillmentInstruction** | [**FulfillmentInstruction**](FulfillmentInstruction.md) | Contains the instructions about the fulfillment like where should it be fulfilled from. |  [optional]
+**isISPU** | **Boolean** | When true, this order is marked to be picked up from a store rather than delivered. |  [optional]
+**marketplaceTaxInfo** | [**MarketplaceTaxInfo**](MarketplaceTaxInfo.md) | Tax information about the marketplace. |  [optional]
+**sellerDisplayName** | **String** | The seller’s friendly name registered in the marketplace. |  [optional]
+**shippingAddress** | [**Address**](Address.md) |  |  [optional]
+**buyerInfo** | [**BuyerInfo**](BuyerInfo.md) |  |  [optional]
+**automatedShippingSettings** | [**AutomatedShippingSettings**](AutomatedShippingSettings.md) | Contains information regarding the Shipping Settings Automaton program, such as whether the order&#39;s shipping settings were generated automatically, and what those settings are. |  [optional]
 
 
 <a name="OrderStatusEnum"></a>
@@ -81,6 +89,14 @@ LONGLEADTIMEORDER | &quot;LongLeadTimeOrder&quot;
 PREORDER | &quot;Preorder&quot;
 BACKORDER | &quot;BackOrder&quot;
 SOURCINGONDEMANDORDER | &quot;SourcingOnDemandOrder&quot;
+
+
+<a name="BuyerInvoicePreferenceEnum"></a>
+## Enum: BuyerInvoicePreferenceEnum
+Name | Value
+---- | -----
+INDIVIDUAL | &quot;INDIVIDUAL&quot;
+BUSINESS | &quot;BUSINESS&quot;
 
 
 

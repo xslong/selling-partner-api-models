@@ -16,12 +16,14 @@ package com.amazon.spapi.model.reports;
 import java.util.Objects;
 import java.util.Arrays;
 import com.amazon.spapi.model.reports.Report;
+import io.swagger.annotations.ApiModel;
 import java.util.ArrayList;
 import java.util.List;
 
 /**
- * ReportList
+ * A list of reports.
  */
+@ApiModel(description = "A list of reports.")
 
 public class ReportList extends ArrayList<Report> {
 

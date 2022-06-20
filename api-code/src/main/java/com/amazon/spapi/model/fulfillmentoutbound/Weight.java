@@ -37,7 +37,11 @@ public class Weight {
   public enum UnitEnum {
     KG("KG"),
     
-    LB("LB");
+    KILOGRAMS("KILOGRAMS"),
+    
+    LB("LB"),
+    
+    POUNDS("POUNDS");
 
     private String value;
 

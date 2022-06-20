@@ -20,6 +20,7 @@ import com.amazon.spapi.model.productpricing.BuyBoxPrices;
 import com.amazon.spapi.model.productpricing.LowestPrices;
 import com.amazon.spapi.model.productpricing.MoneyType;
 import com.amazon.spapi.model.productpricing.NumberOfOffers;
+import com.amazon.spapi.model.productpricing.SalesRankList;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
@@ -51,8 +52,14 @@ public class Summary {
   @SerializedName("ListPrice")
   private MoneyType listPrice = null;
 
+  @SerializedName("CompetitivePriceThreshold")
+  private MoneyType competitivePriceThreshold = null;
+
   @SerializedName("SuggestedLowerPricePlusShipping")
   private MoneyType suggestedLowerPricePlusShipping = null;
+
+  @SerializedName("SalesRankings")
+  private SalesRankList salesRankings = null;
 
   @SerializedName("BuyBoxEligibleOffers")
   private BuyBoxEligibleOffers buyBoxEligibleOffers = null;
@@ -150,6 +157,24 @@ public class Summary {
     this.listPrice = listPrice;
   }
 
+  public Summary competitivePriceThreshold(MoneyType competitivePriceThreshold) {
+    this.competitivePriceThreshold = competitivePriceThreshold;
+    return this;
+  }
+
+   /**
+   * This price is based on competitive prices from other retailers (excluding other Amazon sellers). The offer may be ineligible for the Buy Box if the seller&#39;s price + shipping (minus Amazon Points) is greater than this competitive price.
+   * @return competitivePriceThreshold
+  **/
+  @ApiModelProperty(value = "This price is based on competitive prices from other retailers (excluding other Amazon sellers). The offer may be ineligible for the Buy Box if the seller's price + shipping (minus Amazon Points) is greater than this competitive price.")
+  public MoneyType getCompetitivePriceThreshold() {
+    return competitivePriceThreshold;
+  }
+
+  public void setCompetitivePriceThreshold(MoneyType competitivePriceThreshold) {
+    this.competitivePriceThreshold = competitivePriceThreshold;
+  }
+
   public Summary suggestedLowerPricePlusShipping(MoneyType suggestedLowerPricePlusShipping) {
     this.suggestedLowerPricePlusShipping = suggestedLowerPricePlusShipping;
     return this;
@@ -166,6 +191,24 @@ public class Summary {
 
   public void setSuggestedLowerPricePlusShipping(MoneyType suggestedLowerPricePlusShipping) {
     this.suggestedLowerPricePlusShipping = suggestedLowerPricePlusShipping;
+  }
+
+  public Summary salesRankings(SalesRankList salesRankings) {
+    this.salesRankings = salesRankings;
+    return this;
+  }
+
+   /**
+   * A list that contains the sales rank of the item in the given product categories.
+   * @return salesRankings
+  **/
+  @ApiModelProperty(value = "A list that contains the sales rank of the item in the given product categories.")
+  public SalesRankList getSalesRankings() {
+    return salesRankings;
+  }
+
+  public void setSalesRankings(SalesRankList salesRankings) {
+    this.salesRankings = salesRankings;
   }
 
   public Summary buyBoxEligibleOffers(BuyBoxEligibleOffers buyBoxEligibleOffers) {
@@ -219,14 +262,16 @@ public class Summary {
         Objects.equals(this.lowestPrices, summary.lowestPrices) &&
         Objects.equals(this.buyBoxPrices, summary.buyBoxPrices) &&
         Objects.equals(this.listPrice, summary.listPrice) &&
+        Objects.equals(this.competitivePriceThreshold, summary.competitivePriceThreshold) &&
         Objects.equals(this.suggestedLowerPricePlusShipping, summary.suggestedLowerPricePlusShipping) &&
+        Objects.equals(this.salesRankings, summary.salesRankings) &&
         Objects.equals(this.buyBoxEligibleOffers, summary.buyBoxEligibleOffers) &&
         Objects.equals(this.offersAvailableTime, summary.offersAvailableTime);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(totalOfferCount, numberOfOffers, lowestPrices, buyBoxPrices, listPrice, suggestedLowerPricePlusShipping, buyBoxEligibleOffers, offersAvailableTime);
+    return Objects.hash(totalOfferCount, numberOfOffers, lowestPrices, buyBoxPrices, listPrice, competitivePriceThreshold, suggestedLowerPricePlusShipping, salesRankings, buyBoxEligibleOffers, offersAvailableTime);
   }
 
 
@@ -240,7 +285,9 @@ public class Summary {
     sb.append("    lowestPrices: ").append(toIndentedString(lowestPrices)).append("\n");
     sb.append("    buyBoxPrices: ").append(toIndentedString(buyBoxPrices)).append("\n");
     sb.append("    listPrice: ").append(toIndentedString(listPrice)).append("\n");
+    sb.append("    competitivePriceThreshold: ").append(toIndentedString(competitivePriceThreshold)).append("\n");
     sb.append("    suggestedLowerPricePlusShipping: ").append(toIndentedString(suggestedLowerPricePlusShipping)).append("\n");
+    sb.append("    salesRankings: ").append(toIndentedString(salesRankings)).append("\n");
     sb.append("    buyBoxEligibleOffers: ").append(toIndentedString(buyBoxEligibleOffers)).append("\n");
     sb.append("    offersAvailableTime: ").append(toIndentedString(offersAvailableTime)).append("\n");
     sb.append("}");

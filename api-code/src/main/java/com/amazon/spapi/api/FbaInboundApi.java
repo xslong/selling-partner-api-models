@@ -2211,7 +2211,7 @@ public class FbaInboundApi {
 
     /**
      * 
-     * Adds, updates, or removes items from the inbound shipment identified by the specified shipment identifier.   **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 2 | 30 |  For more information, see \&quot;Usage Plans and Rate Limits\&quot; in the Selling Partner API documentation.
+     * Updates or removes items from the inbound shipment identified by the specified shipment identifier. Adding new items is not supported.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 2 | 30 |  For more information, see \&quot;Usage Plans and Rate Limits\&quot; in the Selling Partner API documentation.
      * @param body  (required)
      * @param shipmentId A shipment identifier originally returned by the createInboundShipmentPlan operation. (required)
      * @return InboundShipmentResponse
@@ -2224,7 +2224,7 @@ public class FbaInboundApi {
 
     /**
      * 
-     * Adds, updates, or removes items from the inbound shipment identified by the specified shipment identifier.   **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 2 | 30 |  For more information, see \&quot;Usage Plans and Rate Limits\&quot; in the Selling Partner API documentation.
+     * Updates or removes items from the inbound shipment identified by the specified shipment identifier. Adding new items is not supported.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 2 | 30 |  For more information, see \&quot;Usage Plans and Rate Limits\&quot; in the Selling Partner API documentation.
      * @param body  (required)
      * @param shipmentId A shipment identifier originally returned by the createInboundShipmentPlan operation. (required)
      * @return ApiResponse&lt;InboundShipmentResponse&gt;
@@ -2238,7 +2238,7 @@ public class FbaInboundApi {
 
     /**
      *  (asynchronously)
-     * Adds, updates, or removes items from the inbound shipment identified by the specified shipment identifier.   **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 2 | 30 |  For more information, see \&quot;Usage Plans and Rate Limits\&quot; in the Selling Partner API documentation.
+     * Updates or removes items from the inbound shipment identified by the specified shipment identifier. Adding new items is not supported.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 2 | 30 |  For more information, see \&quot;Usage Plans and Rate Limits\&quot; in the Selling Partner API documentation.
      * @param body  (required)
      * @param shipmentId A shipment identifier originally returned by the createInboundShipmentPlan operation. (required)
      * @param callback The callback to be executed when the API call finishes

@@ -34,6 +34,9 @@ public class RemovalShipmentEvent {
   @SerializedName("PostedDate")
   private String postedDate = null;
 
+  @SerializedName("MerchantOrderId")
+  private String merchantOrderId = null;
+
   @SerializedName("OrderId")
   private String orderId = null;
 
@@ -59,6 +62,24 @@ public class RemovalShipmentEvent {
 
   public void setPostedDate(String postedDate) {
     this.postedDate = postedDate;
+  }
+
+  public RemovalShipmentEvent merchantOrderId(String merchantOrderId) {
+    this.merchantOrderId = merchantOrderId;
+    return this;
+  }
+
+   /**
+   * The merchant removal orderId.
+   * @return merchantOrderId
+  **/
+  @ApiModelProperty(value = "The merchant removal orderId.")
+  public String getMerchantOrderId() {
+    return merchantOrderId;
+  }
+
+  public void setMerchantOrderId(String merchantOrderId) {
+    this.merchantOrderId = merchantOrderId;
   }
 
   public RemovalShipmentEvent orderId(String orderId) {
@@ -126,6 +147,7 @@ public class RemovalShipmentEvent {
     }
     RemovalShipmentEvent removalShipmentEvent = (RemovalShipmentEvent) o;
     return Objects.equals(this.postedDate, removalShipmentEvent.postedDate) &&
+        Objects.equals(this.merchantOrderId, removalShipmentEvent.merchantOrderId) &&
         Objects.equals(this.orderId, removalShipmentEvent.orderId) &&
         Objects.equals(this.transactionType, removalShipmentEvent.transactionType) &&
         Objects.equals(this.removalShipmentItemList, removalShipmentEvent.removalShipmentItemList);
@@ -133,7 +155,7 @@ public class RemovalShipmentEvent {
 
   @Override
   public int hashCode() {
-    return Objects.hash(postedDate, orderId, transactionType, removalShipmentItemList);
+    return Objects.hash(postedDate, merchantOrderId, orderId, transactionType, removalShipmentItemList);
   }
 
 
@@ -143,6 +165,7 @@ public class RemovalShipmentEvent {
     sb.append("class RemovalShipmentEvent {\n");
     
     sb.append("    postedDate: ").append(toIndentedString(postedDate)).append("\n");
+    sb.append("    merchantOrderId: ").append(toIndentedString(merchantOrderId)).append("\n");
     sb.append("    orderId: ").append(toIndentedString(orderId)).append("\n");
     sb.append("    transactionType: ").append(toIndentedString(transactionType)).append("\n");
     sb.append("    removalShipmentItemList: ").append(toIndentedString(removalShipmentItemList)).append("\n");

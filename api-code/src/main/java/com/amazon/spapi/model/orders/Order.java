@@ -16,7 +16,11 @@ package com.amazon.spapi.model.orders;
 import java.util.Objects;
 import java.util.Arrays;
 import com.amazon.spapi.model.orders.Address;
+import com.amazon.spapi.model.orders.AutomatedShippingSettings;
+import com.amazon.spapi.model.orders.BuyerInfo;
+import com.amazon.spapi.model.orders.BuyerTaxInformation;
 import com.amazon.spapi.model.orders.FulfillmentInstruction;
+import com.amazon.spapi.model.orders.MarketplaceTaxInfo;
 import com.amazon.spapi.model.orders.Money;
 import com.amazon.spapi.model.orders.PaymentExecutionDetailItemList;
 import com.amazon.spapi.model.orders.PaymentMethodDetailItemList;
@@ -345,8 +349,79 @@ public class Order {
   @SerializedName("DefaultShipFromLocationAddress")
   private Address defaultShipFromLocationAddress = null;
 
+  /**
+   * The buyer’s invoicing preference.
+   */
+  @JsonAdapter(BuyerInvoicePreferenceEnum.Adapter.class)
+  public enum BuyerInvoicePreferenceEnum {
+    INDIVIDUAL("INDIVIDUAL"),
+    
+    BUSINESS("BUSINESS");
+
+    private String value;
+
+    BuyerInvoicePreferenceEnum(String value) {
+      this.value = value;
+    }
+
+    public String getValue() {
+      return value;
+    }
+
+    @Override
+    public String toString() {
+      return String.valueOf(value);
+    }
+
+    public static BuyerInvoicePreferenceEnum fromValue(String text) {
+      for (BuyerInvoicePreferenceEnum b : BuyerInvoicePreferenceEnum.values()) {
+        if (String.valueOf(b.value).equals(text)) {
+          return b;
+        }
+      }
+      return null;
+    }
+
+    public static class Adapter extends TypeAdapter<BuyerInvoicePreferenceEnum> {
+      @Override
+      public void write(final JsonWriter jsonWriter, final BuyerInvoicePreferenceEnum enumeration) throws IOException {
+        jsonWriter.value(enumeration.getValue());
+      }
+
+      @Override
+      public BuyerInvoicePreferenceEnum read(final JsonReader jsonReader) throws IOException {
+        String value = jsonReader.nextString();
+        return BuyerInvoicePreferenceEnum.fromValue(String.valueOf(value));
+      }
+    }
+  }
+
+  @SerializedName("BuyerInvoicePreference")
+  private BuyerInvoicePreferenceEnum buyerInvoicePreference = null;
+
+  @SerializedName("BuyerTaxInformation")
+  private BuyerTaxInformation buyerTaxInformation = null;
+
   @SerializedName("FulfillmentInstruction")
   private FulfillmentInstruction fulfillmentInstruction = null;
+
+  @SerializedName("IsISPU")
+  private Boolean isISPU = null;
+
+  @SerializedName("MarketplaceTaxInfo")
+  private MarketplaceTaxInfo marketplaceTaxInfo = null;
+
+  @SerializedName("SellerDisplayName")
+  private String sellerDisplayName = null;
+
+  @SerializedName("ShippingAddress")
+  private Address shippingAddress = null;
+
+  @SerializedName("BuyerInfo")
+  private BuyerInfo buyerInfo = null;
+
+  @SerializedName("AutomatedShippingSettings")
+  private AutomatedShippingSettings automatedShippingSettings = null;
 
   public Order amazonOrderId(String amazonOrderId) {
     this.amazonOrderId = amazonOrderId;
@@ -960,6 +1035,42 @@ public class Order {
     this.defaultShipFromLocationAddress = defaultShipFromLocationAddress;
   }
 
+  public Order buyerInvoicePreference(BuyerInvoicePreferenceEnum buyerInvoicePreference) {
+    this.buyerInvoicePreference = buyerInvoicePreference;
+    return this;
+  }
+
+   /**
+   * The buyer’s invoicing preference.
+   * @return buyerInvoicePreference
+  **/
+  @ApiModelProperty(value = "The buyer’s invoicing preference.")
+  public BuyerInvoicePreferenceEnum getBuyerInvoicePreference() {
+    return buyerInvoicePreference;
+  }
+
+  public void setBuyerInvoicePreference(BuyerInvoicePreferenceEnum buyerInvoicePreference) {
+    this.buyerInvoicePreference = buyerInvoicePreference;
+  }
+
+  public Order buyerTaxInformation(BuyerTaxInformation buyerTaxInformation) {
+    this.buyerTaxInformation = buyerTaxInformation;
+    return this;
+  }
+
+   /**
+   * Contains the business invoice tax information.
+   * @return buyerTaxInformation
+  **/
+  @ApiModelProperty(value = "Contains the business invoice tax information.")
+  public BuyerTaxInformation getBuyerTaxInformation() {
+    return buyerTaxInformation;
+  }
+
+  public void setBuyerTaxInformation(BuyerTaxInformation buyerTaxInformation) {
+    this.buyerTaxInformation = buyerTaxInformation;
+  }
+
   public Order fulfillmentInstruction(FulfillmentInstruction fulfillmentInstruction) {
     this.fulfillmentInstruction = fulfillmentInstruction;
     return this;
@@ -976,6 +1087,114 @@ public class Order {
 
   public void setFulfillmentInstruction(FulfillmentInstruction fulfillmentInstruction) {
     this.fulfillmentInstruction = fulfillmentInstruction;
+  }
+
+  public Order isISPU(Boolean isISPU) {
+    this.isISPU = isISPU;
+    return this;
+  }
+
+   /**
+   * When true, this order is marked to be picked up from a store rather than delivered.
+   * @return isISPU
+  **/
+  @ApiModelProperty(value = "When true, this order is marked to be picked up from a store rather than delivered.")
+  public Boolean isIsISPU() {
+    return isISPU;
+  }
+
+  public void setIsISPU(Boolean isISPU) {
+    this.isISPU = isISPU;
+  }
+
+  public Order marketplaceTaxInfo(MarketplaceTaxInfo marketplaceTaxInfo) {
+    this.marketplaceTaxInfo = marketplaceTaxInfo;
+    return this;
+  }
+
+   /**
+   * Tax information about the marketplace.
+   * @return marketplaceTaxInfo
+  **/
+  @ApiModelProperty(value = "Tax information about the marketplace.")
+  public MarketplaceTaxInfo getMarketplaceTaxInfo() {
+    return marketplaceTaxInfo;
+  }
+
+  public void setMarketplaceTaxInfo(MarketplaceTaxInfo marketplaceTaxInfo) {
+    this.marketplaceTaxInfo = marketplaceTaxInfo;
+  }
+
+  public Order sellerDisplayName(String sellerDisplayName) {
+    this.sellerDisplayName = sellerDisplayName;
+    return this;
+  }
+
+   /**
+   * The seller’s friendly name registered in the marketplace.
+   * @return sellerDisplayName
+  **/
+  @ApiModelProperty(value = "The seller’s friendly name registered in the marketplace.")
+  public String getSellerDisplayName() {
+    return sellerDisplayName;
+  }
+
+  public void setSellerDisplayName(String sellerDisplayName) {
+    this.sellerDisplayName = sellerDisplayName;
+  }
+
+  public Order shippingAddress(Address shippingAddress) {
+    this.shippingAddress = shippingAddress;
+    return this;
+  }
+
+   /**
+   * Get shippingAddress
+   * @return shippingAddress
+  **/
+  @ApiModelProperty(value = "")
+  public Address getShippingAddress() {
+    return shippingAddress;
+  }
+
+  public void setShippingAddress(Address shippingAddress) {
+    this.shippingAddress = shippingAddress;
+  }
+
+  public Order buyerInfo(BuyerInfo buyerInfo) {
+    this.buyerInfo = buyerInfo;
+    return this;
+  }
+
+   /**
+   * Get buyerInfo
+   * @return buyerInfo
+  **/
+  @ApiModelProperty(value = "")
+  public BuyerInfo getBuyerInfo() {
+    return buyerInfo;
+  }
+
+  public void setBuyerInfo(BuyerInfo buyerInfo) {
+    this.buyerInfo = buyerInfo;
+  }
+
+  public Order automatedShippingSettings(AutomatedShippingSettings automatedShippingSettings) {
+    this.automatedShippingSettings = automatedShippingSettings;
+    return this;
+  }
+
+   /**
+   * Contains information regarding the Shipping Settings Automaton program, such as whether the order&#39;s shipping settings were generated automatically, and what those settings are.
+   * @return automatedShippingSettings
+  **/
+  @ApiModelProperty(value = "Contains information regarding the Shipping Settings Automaton program, such as whether the order's shipping settings were generated automatically, and what those settings are.")
+  public AutomatedShippingSettings getAutomatedShippingSettings() {
+    return automatedShippingSettings;
+  }
+
+  public void setAutomatedShippingSettings(AutomatedShippingSettings automatedShippingSettings) {
+    this.automatedShippingSettings = automatedShippingSettings;
   }
 
 
@@ -1022,12 +1241,20 @@ public class Order {
         Objects.equals(this.isEstimatedShipDateSet, order.isEstimatedShipDateSet) &&
         Objects.equals(this.isSoldByAB, order.isSoldByAB) &&
         Objects.equals(this.defaultShipFromLocationAddress, order.defaultShipFromLocationAddress) &&
-        Objects.equals(this.fulfillmentInstruction, order.fulfillmentInstruction);
+        Objects.equals(this.buyerInvoicePreference, order.buyerInvoicePreference) &&
+        Objects.equals(this.buyerTaxInformation, order.buyerTaxInformation) &&
+        Objects.equals(this.fulfillmentInstruction, order.fulfillmentInstruction) &&
+        Objects.equals(this.isISPU, order.isISPU) &&
+        Objects.equals(this.marketplaceTaxInfo, order.marketplaceTaxInfo) &&
+        Objects.equals(this.sellerDisplayName, order.sellerDisplayName) &&
+        Objects.equals(this.shippingAddress, order.shippingAddress) &&
+        Objects.equals(this.buyerInfo, order.buyerInfo) &&
+        Objects.equals(this.automatedShippingSettings, order.automatedShippingSettings);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(amazonOrderId, sellerOrderId, purchaseDate, lastUpdateDate, orderStatus, fulfillmentChannel, salesChannel, orderChannel, shipServiceLevel, orderTotal, numberOfItemsShipped, numberOfItemsUnshipped, paymentExecutionDetail, paymentMethod, paymentMethodDetails, marketplaceId, shipmentServiceLevelCategory, easyShipShipmentStatus, cbaDisplayableShippingLabel, orderType, earliestShipDate, latestShipDate, earliestDeliveryDate, latestDeliveryDate, isBusinessOrder, isPrime, isPremiumOrder, isGlobalExpressEnabled, replacedOrderId, isReplacementOrder, promiseResponseDueDate, isEstimatedShipDateSet, isSoldByAB, defaultShipFromLocationAddress, fulfillmentInstruction);
+    return Objects.hash(amazonOrderId, sellerOrderId, purchaseDate, lastUpdateDate, orderStatus, fulfillmentChannel, salesChannel, orderChannel, shipServiceLevel, orderTotal, numberOfItemsShipped, numberOfItemsUnshipped, paymentExecutionDetail, paymentMethod, paymentMethodDetails, marketplaceId, shipmentServiceLevelCategory, easyShipShipmentStatus, cbaDisplayableShippingLabel, orderType, earliestShipDate, latestShipDate, earliestDeliveryDate, latestDeliveryDate, isBusinessOrder, isPrime, isPremiumOrder, isGlobalExpressEnabled, replacedOrderId, isReplacementOrder, promiseResponseDueDate, isEstimatedShipDateSet, isSoldByAB, defaultShipFromLocationAddress, buyerInvoicePreference, buyerTaxInformation, fulfillmentInstruction, isISPU, marketplaceTaxInfo, sellerDisplayName, shippingAddress, buyerInfo, automatedShippingSettings);
   }
 
 
@@ -1070,7 +1297,15 @@ public class Order {
     sb.append("    isEstimatedShipDateSet: ").append(toIndentedString(isEstimatedShipDateSet)).append("\n");
     sb.append("    isSoldByAB: ").append(toIndentedString(isSoldByAB)).append("\n");
     sb.append("    defaultShipFromLocationAddress: ").append(toIndentedString(defaultShipFromLocationAddress)).append("\n");
+    sb.append("    buyerInvoicePreference: ").append(toIndentedString(buyerInvoicePreference)).append("\n");
+    sb.append("    buyerTaxInformation: ").append(toIndentedString(buyerTaxInformation)).append("\n");
     sb.append("    fulfillmentInstruction: ").append(toIndentedString(fulfillmentInstruction)).append("\n");
+    sb.append("    isISPU: ").append(toIndentedString(isISPU)).append("\n");
+    sb.append("    marketplaceTaxInfo: ").append(toIndentedString(marketplaceTaxInfo)).append("\n");
+    sb.append("    sellerDisplayName: ").append(toIndentedString(sellerDisplayName)).append("\n");
+    sb.append("    shippingAddress: ").append(toIndentedString(shippingAddress)).append("\n");
+    sb.append("    buyerInfo: ").append(toIndentedString(buyerInfo)).append("\n");
+    sb.append("    automatedShippingSettings: ").append(toIndentedString(automatedShippingSettings)).append("\n");
     sb.append("}");
     return sb.toString();
   }

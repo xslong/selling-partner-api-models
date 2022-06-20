@@ -5,7 +5,7 @@
     <artifactId>selling-partner-api</artifactId>
     <packaging>jar</packaging>
     <name>selling-partner-api</name>
-    <version>v2021-05-07-2</version>
+    <version>v2022-03-03</version>
     <url>https://github.com/swagger-api/swagger-codegen</url>
     <description>Swagger Java</description>
     <scm>
@@ -291,4 +291,18 @@
         <junit-version>4.13.1</junit-version>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     </properties>
+
+    <distributionManagement>
+        <repository>
+            <id>erp-release</id>
+            <name>erp-release</name>
+            <url>https://test.edazone.cn/nexus/content/repositories/releases</url>
+            <uniqueVersion>true</uniqueVersion>
+        </repository>
+        <snapshotRepository>
+            <id>erp-snapshot</id>
+            <name>erp-snapshot</name>
+            <url>https://test.edazone.cn/nexus/content/repositories/snapshots</url>
+        </snapshotRepository>
+    </distributionManagement>
 </project>

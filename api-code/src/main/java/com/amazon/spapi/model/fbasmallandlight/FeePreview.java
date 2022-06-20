@@ -15,7 +15,7 @@ package com.amazon.spapi.model.fbasmallandlight;
 
 import java.util.Objects;
 import java.util.Arrays;
-import com.amazon.spapi.model.ErrorList;
+import com.amazon.spapi.model.Error;
 import com.amazon.spapi.model.fbasmallandlight.FeeLineItem;
 import com.amazon.spapi.model.fbasmallandlight.MoneyType;
 import com.google.gson.TypeAdapter;
@@ -48,7 +48,7 @@ public class FeePreview {
   private MoneyType totalFees = null;
 
   @SerializedName("errors")
-  private ErrorList errors = null;
+  private List<Error> errors = null;
 
   public FeePreview asin(String asin) {
     this.asin = asin;
@@ -130,8 +130,16 @@ public class FeePreview {
     this.totalFees = totalFees;
   }
 
-  public FeePreview errors(ErrorList errors) {
+  public FeePreview errors(List<Error> errors) {
     this.errors = errors;
+    return this;
+  }
+
+  public FeePreview addErrorsItem(Error errorsItem) {
+    if (this.errors == null) {
+      this.errors = new ArrayList<Error>();
+    }
+    this.errors.add(errorsItem);
     return this;
   }
 
@@ -140,11 +148,11 @@ public class FeePreview {
    * @return errors
   **/
   @ApiModelProperty(value = "One or more unexpected errors occurred during the getSmallAndLightFeePreview operation.")
-  public ErrorList getErrors() {
+  public List<Error> getErrors() {
     return errors;
   }
 
-  public void setErrors(ErrorList errors) {
+  public void setErrors(List<Error> errors) {
     this.errors = errors;
   }
 

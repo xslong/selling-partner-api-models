@@ -1,6 +1,6 @@
 /*
  * Selling Partner API for Catalog Items
- * The Selling Partner API for Catalog Items provides programmatic access to information about items in the Amazon catalog.
+ * The Selling Partner API for Catalog Items provides programmatic access to information about items in the Amazon catalog.  For more information, see the [Catalog Items API Use Case Guide](https://github.com/amzn/selling-partner-api-docs/blob/main/guides/en-US/use-case-guides/catalog-items-api-use-case-guide/catalog-items-api-use-case-guide_2020-12-01.md).
  *
  * OpenAPI spec version: 2020-12-01
  * 
@@ -18,9 +18,9 @@ import java.util.Arrays;
 import io.swagger.annotations.ApiModel;
 
 /**
- * A JSON object that contains structured item attribute data keyed by attribute name. Catalog item attributes are available only to brand owners.
+ * A JSON object that contains structured item attribute data keyed by attribute name. Catalog item attributes are available only to brand owners and conform to the related product type definitions available in the Selling Partner API for Product Type Definitions.
  */
-@ApiModel(description = "A JSON object that contains structured item attribute data keyed by attribute name. Catalog item attributes are available only to brand owners.")
+@ApiModel(description = "A JSON object that contains structured item attribute data keyed by attribute name. Catalog item attributes are available only to brand owners and conform to the related product type definitions available in the Selling Partner API for Product Type Definitions.")
 
 public class ItemAttributes {
 

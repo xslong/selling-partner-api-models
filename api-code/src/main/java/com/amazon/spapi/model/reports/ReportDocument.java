@@ -25,8 +25,9 @@ import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
 
 /**
- * ReportDocument
+ * Information required for the report document.
  */
+@ApiModel(description = "Information required for the report document.")
 
 public class ReportDocument {
   @SerializedName("reportDocumentId")
